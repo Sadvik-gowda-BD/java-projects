@@ -1,6 +1,4 @@
-package com.it.multithreading;
-
-import javax.sound.midi.Soundbank;
+package com.it.multithreading.basic;
 
 public class UsingThreadClass extends Thread {
 

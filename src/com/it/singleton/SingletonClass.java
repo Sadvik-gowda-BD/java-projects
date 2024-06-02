@@ -2,7 +2,8 @@ package com.it.singleton;
 
 public final class SingletonClass {
 
-    private static SingletonClass instance;
+    //Volatile because instance value always needs to fetch from main memory not from any CPU core cache
+    private static volatile SingletonClass instance;
 
     private SingletonClass() {
     }

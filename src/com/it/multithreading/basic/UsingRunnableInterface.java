@@ -1,4 +1,4 @@
-package com.it.multithreading;
+package com.it.multithreading.basic;
 
 public class UsingRunnableInterface implements Runnable {
     @Override
