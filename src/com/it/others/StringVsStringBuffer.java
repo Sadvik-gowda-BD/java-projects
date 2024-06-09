@@ -5,6 +5,7 @@ public class StringVsStringBuffer {
 
         String str = "string";
         StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder stringBuilder = new StringBuilder();
 
         long t1 = System.currentTimeMillis();
         for (int i = 0; i < 10000; i++) {
@@ -19,8 +20,16 @@ public class StringVsStringBuffer {
         }
         long t4 = System.currentTimeMillis();
 
+        long t5 = System.currentTimeMillis();
+        for (int i = 0; i < 10000; i++) {
+            stringBuilder.append("string");
+        }
+        long t6 = System.currentTimeMillis();
+
         System.out.println("Time by normal string :" + (t2 - t1));
         System.out.println("Time by StringBuffer :" + (t4 - t3));
+        System.out.println("Time by stringBuilder :" + (t6 - t5));
+
 
     }
 

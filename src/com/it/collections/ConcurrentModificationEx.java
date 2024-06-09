@@ -8,7 +8,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /*
 ConcurrentModificationException throws when mod counter does not match.
 When ever we modify the List in the middle of iteration the mod count will get increment,
-and it doesn't march with the expected mod count.
+and it doesn't match with the expected mod count.
 
 To avoid we can use CopyOnWriteArrayList, ConcurrentHashMap
  */

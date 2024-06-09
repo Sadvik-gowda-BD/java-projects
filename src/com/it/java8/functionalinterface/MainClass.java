@@ -26,7 +26,7 @@ public class MainClass {
         AgeFilter ageFilterLambda = (student) -> {
             return student.getAge() > 20;
         };
-        System.out.println("Anonymous class");
+        System.out.println("By using Lambda");
         System.out.println("Student1:" + ageFilterLambda.ageFilter(student1));
         System.out.println("Student2:" + ageFilterLambda.ageFilter(student2));
 
