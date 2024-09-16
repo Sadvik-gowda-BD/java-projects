@@ -7,6 +7,7 @@ public class DecimalToBinary {
         System.out.println("Binary num is:" + convertDecimalToBinary(num));
     }
 
+    //TODO logic might wrong
     public static String convertDecimalToBinary(int num) {
         //4 -> 100
         StringBuilder binStr = new StringBuilder();
