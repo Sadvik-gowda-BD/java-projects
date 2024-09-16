@@ -1,0 +1,1 @@
+Behavioral design patterns are a category of design patterns that focus on how objects interact and collaborate with each other. These patterns are concerned with the delegation of responsibilities among objects and how they communicate and work together. They help in defining how objects should interact, handle communication, and manage algorithms.

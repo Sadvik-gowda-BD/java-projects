@@ -6,8 +6,8 @@ import java.io.IOException;
 
 public class FileOperation {
 
-    private static final String sourceFile = "D:\\Intelij-workspace\\Java-Project\\Temp-file1.txt";
-    private static final String destFile = "D:\\Intelij-workspace\\Java-Project\\Temp-file2.txt";
+    private static final String sourceFile = "D:\\repo\\java-projects\\src\\files\\Temp-file1.txt";
+    private static final String destFile = "D:\\repo\\java-projects\\src\\files\\Temp-file2.txt";
 
     public static void main(String[] args) throws IOException {
         String file1Data = getFileData();

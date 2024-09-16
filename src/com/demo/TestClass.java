@@ -1,13 +1,17 @@
 package com.demo;
 
-import java.io.FileReader;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+import java.util.Arrays;
 
-public class TestClass {
 
-    public void printMsg(){
-        HashMap<String,String> hm = new LinkedHashMap<>();
+public class TestClass extends Test2 {
+
+    public static void main(String[] args) {
+
+        Test1 t = new Test1();
+        t.print();
+
+        Test1.print();
+
     }
 
 }

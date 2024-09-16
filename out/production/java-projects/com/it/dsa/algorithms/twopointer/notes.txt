@@ -1,0 +1,23 @@
+
+It involves using two pointers to save time and space. (Here, pointers are basically array indexes).
+The idea here is to iterate two different parts of the array simultaneously to get the answer faster.
+
+
+There are primarily two ways of implementing the two-pointer technique:
+
+1. One pointer at each end
+    One pointer starts from beginning and other from the end and they proceed towards each other.
+
+2. Different Paces
+    Both pointers start from the beginning but one pointer moves at a faster pace than the other one.
+
+---------------------------------------------
+
+1)Ex for One pointer at each end
+In a sorted array, find if a pair exists with a given sum S
+Reverse an array
+Palindrome
+
+
+2)Different Paces
+Find the middle of a linked list
