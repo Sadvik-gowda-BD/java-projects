@@ -1,6 +1,7 @@
 package com.it.designpatterns.behavioral.strategy;
 
-public class SortingContextWithStrategy {
+public class
+SortingContextWithStrategy {
 
     private SortingStrategy sortingStrategy;
 

@@ -14,12 +14,16 @@ public class CustomBinaryTree {
     }
 
     private Node insert(Node node, int data) {
+        if(node == null){
+            return new Node(data);
+        }
+
         if (data < node.data) {
             insert(node.left, data);
         } else {
             insert(node.right, data);
         }
-        return null;
+        return node;
     }
 
 

@@ -1,4 +1,4 @@
-package com.it.designpatterns.structural.facade;
+package com.it.designpatterns.structural.facade.example1;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
