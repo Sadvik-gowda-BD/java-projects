@@ -1,10 +1,8 @@
 package com.it.dsa.datastrucuture.binarytree;
 
-import java.util.Stack;
-
 public class CustomBinaryTree {
 
-    private Node head;
+    private BinaryNode head;
 
     public void insert(int data) {
 
@@ -13,9 +11,9 @@ public class CustomBinaryTree {
         }
     }
 
-    private Node insert(Node node, int data) {
+    private BinaryNode insert(BinaryNode node, int data) {
         if(node == null){
-            return new Node(data);
+            return new BinaryNode(data);
         }
 
         if (data < node.data) {
@@ -32,7 +30,7 @@ public class CustomBinaryTree {
         Node n1 = new Node(3);
         Node n1 = new Node(4);
      */
-    public void preOrderTraversalRecursion(Node node) {
+    public void preOrderTraversalRecursion(BinaryNode node) {
         if (node == null) {
             return;
         }
@@ -41,29 +39,14 @@ public class CustomBinaryTree {
         preOrderTraversalRecursion(node.right);
     }
 
-    public void preOrderTraversalIterator(Node node) {
-        Stack<Node> stack = new Stack<>();
-        stack.push(node);
-        while (!stack.isEmpty()) {
-            Node temp = stack.pop();
-            System.out.print(temp.data + " ");
 
-            if (temp.right != null) {
-                stack.push(temp.right);
-            }
-
-            if (temp.left != null) {
-                stack.push(temp.left);
-            }
-        }
-    }
 
     /*
         The left subtree is traversed first
         Then the root node for that subtree is traversed
         Finally, the right subtree is traversed
      */
-    public void inOrderTraversalRecursion(Node node) {
+    public void inOrderTraversalRecursion(BinaryNode node) {
         if (node == null) {
             return;
         }
@@ -72,7 +55,7 @@ public class CustomBinaryTree {
         inOrderTraversalRecursion(node.right);
     }
 
-    public void inOrderTraversalIterator(Node root) {
+    public void inOrderTraversalIterator(BinaryNode root) {
 
     }
 
@@ -81,7 +64,7 @@ public class CustomBinaryTree {
     Then the right subtree is traversed
     Finally, the root node of the subtree is traversed
      */
-    public void postOrderTraversalRecursion(Node node) {
+    public void postOrderTraversalRecursion(BinaryNode node) {
         if (node == null) {
             return;
         }
@@ -90,12 +73,12 @@ public class CustomBinaryTree {
         System.out.print(node.data + " ");
     }
 
-    public void postOrderTraversalIterator(Node root) {
+    public void postOrderTraversalIterator(BinaryNode root) {
 
     }
 
 
-    public void levelOrderTraversal(Node node) {
+    public void levelOrderTraversal(BinaryNode node) {
 
     }
 

@@ -9,6 +9,7 @@ public class StaticNestedClass {
     public static void main(String[] args) {
 
         OuterClass.StaticNestedClass staticNestedClass = new OuterClass.StaticNestedClass();
+        staticNestedClass.display();
 
     }
 

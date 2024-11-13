@@ -7,7 +7,6 @@ public final class SingletonClass {
 
     //Reflection can break
     private SingletonClass() {
-
         //To make reflection safe
         if (instance != null) {
             throw new IllegalStateException("Singleton instance already created!");

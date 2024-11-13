@@ -13,8 +13,8 @@ public class Iterators {
 
     public static void main(String[] args) {
         //iteratorTest();
-        //listIteratorTest();
-        listIteratorReverseTraversalTest();
+        listIteratorTest();
+//        listIteratorReverseTraversalTest();
     }
 
     private static void listIteratorTest(){
@@ -25,9 +25,9 @@ public class Iterators {
             int val = lstItr.next();
             if (val == 3) {
                 System.out.print(val);
-                //lstItr.remove(); //It removes the current element in Iterator, i.e 3
-                //lstItr.add(303); //It add 303 after 3 at 3rd index
-                lstItr.set(303);  //It replace the element 3 with 303
+                lstItr.remove(); //It removes the current element in Iterator & list, i.e 3
+//                lstItr.add(303); //It add 303 after 3 at 3rd index
+//                lstItr.set(303);  //It replace the element 3 with 303
             } else {
                 System.out.print(val);
             }

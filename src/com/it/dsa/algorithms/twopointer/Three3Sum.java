@@ -8,7 +8,7 @@ import java.util.List;
 public class Three3Sum {
 
     public static void main(String[] args) {
-        int[] arr = {0, 0, 0, 0};
+        int[] arr = {1, 2, 3, 2};
         System.out.println(threeSum(arr));
 
     }
@@ -40,12 +40,8 @@ public class Three3Sum {
                     p2++;
 
                 }
-
             }
-
-
         }
-
         return ls;
     }
 
