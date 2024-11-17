@@ -12,16 +12,18 @@ public class LengthOfCycleInArray {
 
         /*
         lengthOfCycle([1, 0], 0); // 2
-lengthOfCycle([1, 2, 0], 0); // 3
-lengthOfCycle([1, 2, 3, 1], 0); // 3
+        lengthOfCycle([1, 2, 0], 0); // 3
+        lengthOfCycle([1, 2, 3, 1], 0); // 3
          */
 
         int[] arr = {1, 2, 3, 1};
         System.out.println(solve(arr, 0));
+        System.out.println(byUsingFastSlowPointer(arr, 0)); // Easy
     }
 
     private static int solve(int[] arr, int startIndex) {
 
+        //Here map works as visited array along with length
         HashMap<Integer, Integer> map = new HashMap<>();
         int ind = startIndex;
         int len = 0;
@@ -37,5 +39,22 @@ lengthOfCycle([1, 2, 3, 1], 0); // 3
         }
 
         return len - map.get(ind);
+    }
+
+    private static int byUsingFastSlowPointer(int[] arr, int startIndex) {
+        int s = arr[startIndex];
+        int f = arr[arr[startIndex]];
+        int count = 1;
+
+        while (s != f) {
+            if (f >= arr.length || f < 0) {
+                return -1;
+            }
+            s = arr[s];
+            f = arr[arr[f]];
+            count++;
+        }
+
+        return count;
     }
 }

@@ -2,7 +2,7 @@ package com.it.problem_solve.leetcode;
 
 import java.util.Arrays;
 
-public class MoveZeros {
+public class Move0Zeros {
 
     public static void main(String[] args) {
 
