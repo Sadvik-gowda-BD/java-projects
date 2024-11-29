@@ -5,18 +5,26 @@ import java.util.List;
 
 /*
 Circular game
+
+Math formula:
+for n and 2 step
+
+n = 2^a + L
+then Winner W(n) = 2L + 1
+
  */
 public class JosephusProblem {
 
     public static void main(String[] args) {
-        int n = 7; // Number of people
+        int n = 18; // Number of people
         int k = 3; // Step count
 
         int result = findJosephusPosition(n, k);
         int result2 = findJosephusPositionByList(n, k);
-        System.out.println("The survivor's position is: " + result);
+        System.out.println("The survivor's position is: " + result+" res2: "+ result2);
     }
 
+    //The safe position is survivor + 1 at each itr
     public static int findJosephusPosition(int n, int k) {
         int survivor = 0; // Base case for 1 person (0-indexed)
 

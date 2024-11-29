@@ -2,11 +2,11 @@ package com.it.dsa.datastrucuture.linkedlist;
 
 public class CustomLinkedList<E> {
 
-    private Node<E> head;
-    private Node<E> tail;
+    private ListNode<E> head;
+    private ListNode<E> tail;
 
     public void add(E data) {
-        Node<E> node = new Node<>(data);
+        ListNode<E> node = new ListNode<>(data);
         if (head == null) {
             head = tail = node;
         } else {
@@ -17,8 +17,8 @@ public class CustomLinkedList<E> {
 
     public boolean remove(E data) {
         boolean isRemoved = false;
-        Node<E> currentNode = head;
-        Node<E> previousNode = null;
+        ListNode<E> currentNode = head;
+        ListNode<E> previousNode = null;
         while (currentNode != null) {
             if (currentNode.data.equals(data)) {
                 if (previousNode != null) {
@@ -41,7 +41,7 @@ public class CustomLinkedList<E> {
             System.out.println("Linked list is empty");
             return;
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         while (currentNode != null) {
             System.out.print(currentNode.data +" ");
             currentNode = currentNode.next;

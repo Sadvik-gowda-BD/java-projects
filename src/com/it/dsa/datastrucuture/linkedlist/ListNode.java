@@ -1,10 +1,10 @@
 package com.it.dsa.datastrucuture.linkedlist;
 
-public class Node<E> {
+public class ListNode<E> {
     public E data;
-    public Node<E> next;
+    public ListNode<E> next;
 
-    public Node(E data) {
+    public ListNode(E data) {
         this.data = data;
         this.next = null;
     }
