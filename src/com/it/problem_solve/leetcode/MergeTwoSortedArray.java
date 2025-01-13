@@ -2,13 +2,17 @@ package com.it.problem_solve.leetcode;
 
 import java.util.Arrays;
 
+/*
+   Merge 2 sorted array with O(N)
+  Input - [1,4,6,7], [2,3,5]
+  Output - [1,2,3,4,5,6,7]
+   */
 public class MergeTwoSortedArray {
 
-    /*
-    Merge 2 sorted array with O(N)
-   Input - [1,4,6,7], [2,3,5]
-   Output - [1,2,3,4,5,6,7]
-    */
+    public static void main(String[] args) {
+
+    }
+
     private static void mergeArray(int[] arr1, int[] arr2) {
 
         int minLen = Math.min(arr1.length, arr2.length);

@@ -28,6 +28,7 @@ public class GraphBFS {
         while (!q.isEmpty()) {
             int node = q.poll();
             System.out.print(node + ", ");
+
             for (int ele : adj.get(node)) {
                 if (!visited[ele]) {
                     visited[ele] = true;

@@ -1,6 +1,4 @@
-package com.it.dsa.graph.problems;
-
-import com.it.dsa.graph.representation.Graph;
+package com.it.dsa.graph.representation;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,5 @@
 package com.it.others;
 
-import javax.crypto.spec.PSource;
-
 public class ExceptionHandling {
 
     public static void main(String[] args) {

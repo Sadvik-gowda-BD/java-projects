@@ -27,6 +27,7 @@ public class NearestDistance {
             System.out.println(Arrays.toString(resultDP[i]));
         }
 
+        System.out.println();
         int[][] result = solveBFS2(mat);
         for (int i = 0; i < mat.length; i++) {
             System.out.println(Arrays.toString(result[i]));

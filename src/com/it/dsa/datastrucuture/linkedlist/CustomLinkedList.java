@@ -48,4 +48,8 @@ public class CustomLinkedList<E> {
         }
         System.out.println();
     }
+
+    public ListNode<E> getHead(){
+        return head;
+    }
 }

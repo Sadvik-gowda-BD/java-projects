@@ -1,25 +1,15 @@
 package com.demo;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.PriorityQueue;
-
 
 public class TestClass {
 
     public static void main(String[] args) {
 
+        Test1 t1 = new Test1();
+        Test2 t2 = new Test2();
 
 
 
     }
-
-    public void test1(){
-
-    }
-
 
 }
