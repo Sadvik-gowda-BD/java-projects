@@ -1,4 +1,4 @@
-package com.it.dsa.graph.problems;
+package com.it.dsa.graph.algorithms;
 
 import java.util.Arrays;
 import java.util.List;

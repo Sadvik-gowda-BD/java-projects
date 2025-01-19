@@ -1,7 +1,6 @@
-package com.it.dsa.graph.problems;
+package com.it.dsa.graph.algorithms;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
