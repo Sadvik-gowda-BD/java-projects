@@ -9,6 +9,8 @@ import java.util.PriorityQueue;
 /*
 
 It uses Greedy approach
+
+Prim's algo is faster than  Kruskal's algo
  */
 public class PrimsAlgorithmMinSpanning {
 

@@ -90,7 +90,7 @@ public class NoOfIsland {
                     int nCol = delCol + c; //neighbor col
                     if (nRow >= 0 && nRow < grid.length && nCol >= 0 && nCol < grid[0].length
                             && !visit[nRow][nCol] && grid[nRow][nCol] == '1'
-                            && (nRow == r || nCol == c)) {
+                            && (nRow == r || nCol == c)) { //for diagonal check
                         pairs.add(new Pair(nRow, nCol));
                         visit[nRow][nCol] = true;
                     }

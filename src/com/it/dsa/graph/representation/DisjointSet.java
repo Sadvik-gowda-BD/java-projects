@@ -5,9 +5,9 @@ import java.util.List;
 
 public class DisjointSet {
 
-    List<Integer> parent = new ArrayList<>();
+    public List<Integer> parent = new ArrayList<>();
     List<Integer> rank = new ArrayList<>();
-    List<Integer> size = new ArrayList<>();
+    public List<Integer> size = new ArrayList<>();
 
     public DisjointSet(int n) {
         //taken n+1 size, so it works for both 0 and 1 based index
@@ -52,7 +52,11 @@ public class DisjointSet {
         return findParent(u) == findParent(v);
     }
 
-    public void unionByRank(int u, int v) {
+    public int getMaxSize() {
+        return size.stream().mapToInt(n -> n).max().orElse(0);
+    }
+
+    private void unionByRank(int u, int v) {
 
         int parentU = findParent(u);
         int parentV = findParent(v);
@@ -93,7 +97,7 @@ class Main {
         } else
             System.out.println("Not Same");
 
-        ds.unionByRank(3, 7);
+        //ds.unionByRank(3, 7);
         if (ds.findParent(3) == ds.findParent(7)) {
             System.out.println("Same");
         } else

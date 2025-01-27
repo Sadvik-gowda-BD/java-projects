@@ -32,10 +32,8 @@ public class GraphDFS {
     }
 
 
-    /*
 
-
-     private static void traverseDFS(int[][] mat, boolean[][] visited, int i, int j, int rowLen, int colLen) {
+     private static void dfsForMatrix(int[][] mat, boolean[][] visited, int i, int j, int rowLen, int colLen) {
 
         //System.out.println(i + " " + j);
         if (i < 0 || i >= rowLen || j < 0 || j >= colLen || mat[i][j] == 0 || visited[i][j]) {
@@ -47,10 +45,10 @@ public class GraphDFS {
         if (mat[i][j] == 1) {
             //visited[i][j] = true;
 
-            traverseDFS(mat, visited, i - 1, j, rowLen, colLen);
-            traverseDFS(mat, visited, i + 1, j, rowLen, colLen);
-            traverseDFS(mat, visited, i, j - 1, rowLen, colLen);
-            traverseDFS(mat, visited, i, j + 1, rowLen, colLen);
+            dfsForMatrix(mat, visited, i - 1, j, rowLen, colLen);
+            dfsForMatrix(mat, visited, i + 1, j, rowLen, colLen);
+            dfsForMatrix(mat, visited, i, j - 1, rowLen, colLen);
+            dfsForMatrix(mat, visited, i, j + 1, rowLen, colLen);
 
             // Diagonal condition
 //            traverseDFS(mat, visited, i - 1, j - 1, rowLen, colLen);
@@ -61,8 +59,6 @@ public class GraphDFS {
 
     }
 
-
-     */
 
 
 }

@@ -1,4 +1,4 @@
-package com.it.dsa.graph.problems;
+package com.it.problem_solve.leetcode;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;

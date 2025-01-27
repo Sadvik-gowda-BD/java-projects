@@ -1,32 +1,28 @@
-package com.demo;
+package com.it.problem_solve.leetcode.lc150;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 import java.util.Random;
-import java.util.Set;
 
-public class Test1 {
+public class RandomizedSet {
 
-    HashMap<Integer, Integer> hm = new HashMap<>();
-    List<Integer> list = new ArrayList<>();
-    Random rand = new Random();
+    HashMap<Integer, Integer> hm;
+    List<Integer> list;
+    Random rand;
 
-    public static void main(String[] args) throws Exception {
-
-
+    public RandomizedSet() {
+        hm = new HashMap<>();
+        list = new ArrayList<>();
+        rand = new Random();
     }
-
 
     public boolean insert(int val) {
         if (hm.containsKey(val)) {
             return false;
         }
 
+        list.add(val);
         hm.put(val, list.size() - 1);
         return true;
     }
@@ -37,17 +33,17 @@ public class Test1 {
         }
 
         int index = hm.get(val);
-        int lastEle = list.get(list.size()-1);
+        int lastEle = list.get(list.size() - 1);
         list.set(index, lastEle);
         hm.put(lastEle, index);
-        list.remove(list.size()-1);
+        list.remove(list.size() - 1);
+        hm.remove(val);
 
         return true;
+
     }
 
     public int getRandom() {
         return list.get(rand.nextInt(list.size()));
     }
-
-
 }
