@@ -6,7 +6,7 @@ public class BinarySearchTree {
         if (root == null) {
             return new BinaryNode(val);
         }
-        if (root.data < val) {
+        if (root.val < val) {
             root.left = insertByRec(root.left, val);
         } else {
             root.right = insertByRec(root.right, val);
@@ -22,7 +22,7 @@ public class BinarySearchTree {
 
         BinaryNode currNode = root;
         while (true) {
-            if (data <= currNode.data) {
+            if (data <= currNode.val) {
                 if (currNode.left != null) {
                     currNode = currNode.left;
                 } else {
@@ -48,20 +48,20 @@ public class BinarySearchTree {
             return null;
         }
 
-        if (root.data == data) {
+        if (root.val == data) {
             return deleteHelper(root);
         }
 
         BinaryNode currNode = root;
         while (currNode != null) {
-            if (data < currNode.data) {
-                if (currNode.left != null && currNode.left.data == data) {
+            if (data < currNode.val) {
+                if (currNode.left != null && currNode.left.val == data) {
                     currNode.left = deleteHelper(currNode.left);
                 } else {
                     currNode = currNode.left;
                 }
             } else {
-                if (currNode.right != null && currNode.right.data == data) {
+                if (currNode.right != null && currNode.right.val == data) {
                     currNode.right = deleteHelper(currNode.right);
                 } else {
                     currNode = currNode.right;

@@ -1,6 +1,11 @@
 package com.it.problem_solve.others;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Fibonacci {
+
+    static Map<Integer, Integer> cacheMap = new HashMap<>();
 
     //0 1 1 2 3 5 8 .....
     public static void main(String[] args) {
@@ -38,5 +43,18 @@ public class Fibonacci {
             return num;
         }
         return fibonacciByRecursion(num - 1) + fibonacciByRecursion(num - 2);
+    }
+
+    private static int fibonacciByRecMemoization(int num) {
+        if (num == 0 || num == 1) {
+            return num;
+        }
+
+        if (cacheMap.containsKey(num)) {
+            return cacheMap.get(num);
+        }
+        int result = fibonacciByRecursion(num - 1) + fibonacciByRecursion(num - 2);
+        cacheMap.put(num, result);
+        return result;
     }
 }

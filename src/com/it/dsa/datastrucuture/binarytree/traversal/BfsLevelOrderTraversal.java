@@ -19,7 +19,7 @@ public class BfsLevelOrderTraversal {
         while (!queue.isEmpty()) {
 
             BinaryNode node = queue.poll();
-            System.out.print(node.data + "--> ");
+            System.out.print(node.val + "--> ");
             if (node.left != null) {
                 queue.add(node.left);
             }

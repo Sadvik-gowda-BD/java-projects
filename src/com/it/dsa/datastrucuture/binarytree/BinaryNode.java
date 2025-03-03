@@ -4,11 +4,11 @@ public class BinaryNode {
 
     public BinaryNode left;
     public BinaryNode right;
-    public int data;
+    public int val;
 
-    public BinaryNode(int data) {
+    public BinaryNode(int val) {
         this.left = null;
         this.right = null;
-        this.data = data;
+        this.val = val;
     }
 }

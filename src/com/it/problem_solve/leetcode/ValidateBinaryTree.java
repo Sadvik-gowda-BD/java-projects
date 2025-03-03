@@ -35,13 +35,13 @@ public class ValidateBinaryTree {
         if (root == null) {
             return true;
         }
-        if (!(minVal < root.data && maxVal > root.data)) {
+        if (!(minVal < root.val && maxVal > root.val)) {
             return false;
         }
 
-        System.out.println("root.val:" + root.data + " min:" + minVal + " max:" + maxVal);
+        System.out.println("root.val:" + root.val + " min:" + minVal + " max:" + maxVal);
 
-        return solve(root.left, minVal, root.data) && solve(root.right, root.data, maxVal);
+        return solve(root.left, minVal, root.val) && solve(root.right, root.val, maxVal);
 
     }
 }

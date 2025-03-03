@@ -51,7 +51,7 @@ public class SerializeDeserializeBinaryTree {
             st.append("NULL").append(",");
             return;
         }
-        st.append(root.data).append(",");
+        st.append(root.val).append(",");
         serialize(root.left, st);
         serialize(root.right, st);
     }

@@ -11,7 +11,6 @@ public class GraphBFS {
 
     public static void main(String[] args) {
 
-
     }
 
     private static void bfsForAdjList(List<List<Integer>> adj){
@@ -58,7 +57,8 @@ public class GraphBFS {
                     int nCol = delCol + c; //neighbor col
                     if (nRow >= 0 && nRow < grid.length && nCol >= 0 && nCol < grid[0].length
                             && !visit[nRow][nCol] && grid[nRow][nCol] == '1'
-                            && (nRow == r || nCol == c)) {
+                            && (nRow == r || nCol == c) //To avoid diagonal condition
+                    ) {
                         pairs.add(new Pair(nRow, nCol));
                         visit[nRow][nCol] = true;
                     }

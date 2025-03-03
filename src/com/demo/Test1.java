@@ -1,64 +1,134 @@
 package com.demo;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.Iterator;
 import java.util.Random;
-import java.util.Set;
+import java.util.Stack;
 
 public class Test1 {
 
+    private static int ind = 0;
+
+
     public static void main(String[] args) throws Exception {
 
-        int[] a1 = {2,4,6};
+//        System.out.println(solve2("1 + 1"));
+//        System.out.println(solve2("1+1+(2+2)-1"));
 
-        solve2(a1);
+//        String st = "- (3 + (4 + 5))";
+//        String st2 = removeSpace(st);
+
+        System.out.println(solveByRecursion("(3-(5-(8)-(2+(9-(0-(8-(2))))-(4))-(4))")); //23
+
+        System.out.println(solveByRecursion("3-(5-(8)-(2)))"));
+//        System.out.println(solve("1-(     -2)"));
 
     }
 
 
-    public static int solve2(int[] arr) {
-        Map<Integer, Integer> map = new HashMap<>();
+    public int simpleSoln(String s) {
+        int length = s.length();
+        int sign = 1;
+        int ans = 0;
+        int currNo = 0;
+        Stack<Integer> stack = new Stack<>();
 
-        for (int n : arr) {
-            int pre = n - 1;
-            int post = n + 1;
-
-            if(map.containsKey(n)){
-                continue;
+        for (int i = 0; i < length; i++) {
+            if (Character.isDigit(s.charAt(i))) {
+                currNo = s.charAt(i) - '0';
+                while (i + 1 < length && Character.isDigit(s.charAt(i + 1))) {
+                    currNo = currNo * 10 + s.charAt(i + 1) - '0';
+                    i++;
+                }
+                currNo = currNo * sign;
+                ans += currNo;
+                currNo = 0;
+                sign = 1;
+            } else if (s.charAt(i) == '+') {
+                sign = 1;
+            } else if (s.charAt(i) == '-') {
+                sign = -1;
+            } else if (s.charAt(i) == '(') {
+                stack.push(ans);
+                stack.push(sign);
+                ans = 0;
+                sign = 1;
+            } else if (s.charAt(i) == ')') {
+                int prevSign = stack.pop();
+                ans = prevSign * ans;
+                int precAns = stack.pop();
+                ans = precAns + ans;
             }
+        }
+        return ans;
+    }
 
-            if (!map.containsKey(pre) && !map.containsKey(post)) {
-                map.put(n, 1);
-            } else if (map.containsKey(pre) && !map.containsKey(post)) {
-                int val = map.get(pre) + 1;
-                map.put(n, val);
-                map.put(n - map.get(pre), val);
-            } else if (!map.containsKey(pre) && map.containsKey(post)) {
-                int val = map.get(post) + 1;
-                map.put(n, val);
-                map.put(n + map.get(post), val);
+    public static int solveByRecursion(String st) {
+        ind = 0;
+        return solve2(st);
+    }
+
+
+    public static int solve2(String st) {
+        int sum = 0;
+        int len = st.length();
+
+        for (int i = ind; i < len; i++) {
+            char ch = st.charAt(i);
+            if (ch == ' ') continue;
+
+            if (Character.isDigit(ch)) {
+                int dig = getDigit(st, i);
+                String digStr = String.valueOf(dig);
+                sum += dig;
+                if (dig < 0) {
+                    i += digStr.length() - 2;
+                } else {
+                    i += digStr.length() - 1;
+                }
+
+            } else if (ch == '(') {
+                ind = i + 1;
+                int res = solve2(st);
+                if (i > 0 && st.charAt(i - 1) == '-') {
+                    res *= -1;
+                }
+                sum += res;
+                i = ind;
+            } else if (ch == ')') {
+                ind = i;
+                return sum;
+            }
+        }
+        return sum;
+    }
+
+    private static int getDigit(String st, int start) {
+        int val = 0;
+        for (int j = start; j < st.length(); j++) {
+            char ch2 = st.charAt(j);
+            if (Character.isDigit(ch2)) {
+                val *= 10;
+                val +=  ch2-'0';
             } else {
-                int preVal = map.get(pre);
-                int postVal = map.get(post);
-                int val = preVal + postVal + 1;
-                map.put(n, val);
-                map.put(n - preVal, val);
-                map.put(n + postVal, val);
+                break;
             }
         }
 
-        int max = 0;
-        for (int val : map.values()) {
-            max = Math.max(max, val);
+        if (start > 0 && st.charAt(start - 1) == '-') {
+            return val * -1;
         }
-        System.out.println(max);
-        return max;
+        return val;
+    }
+
+    private static String removeSpace(String st) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < st.length(); i++) {
+            char ch = st.charAt(i);
+            if (ch != ' ') {
+                sb.append(ch);
+            }
+        }
+        return sb.toString();
     }
 
 }

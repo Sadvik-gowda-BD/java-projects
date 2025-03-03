@@ -80,7 +80,6 @@ public class ShortestPathBinaryMatrix {
     }
 
     private static class Pair {
-
         int i;
         int j;
         int dist;

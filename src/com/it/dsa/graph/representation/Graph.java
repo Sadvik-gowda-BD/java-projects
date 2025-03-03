@@ -30,7 +30,7 @@ public class Graph {
         addEdge(adj, 2, 5);
         addEdge(adj, 5, 4);
 
-        System.out.println("Adjacency List Representation:");
+        System.out.println("\n\nAdjacency List Representation:");
         displayAdjList(adj);
 
         return adj;
@@ -66,7 +66,7 @@ public class Graph {
         addEdge(adj, 2, 5);
         addEdge(adj, 5, 4);
 
-        System.out.println("Adjacency Matrix Representation");
+        System.out.println("\n\nAdjacency Matrix Representation");
         displayMatrix(adj);
         return adj;
     }

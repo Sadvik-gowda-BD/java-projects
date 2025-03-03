@@ -7,6 +7,9 @@ GFG
 
 Input: edges = [[0,1,5], [1,0,3], [1,2,-1], [2,0,1]], src = 2
 
+Find the shortest path
+Works for negative edges
+
  */
 public class BellmanFord {
 

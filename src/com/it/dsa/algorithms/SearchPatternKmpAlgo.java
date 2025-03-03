@@ -1,10 +1,9 @@
-package com.demo;
+package com.it.dsa.algorithms;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class SearchPattern {
+public class SearchPatternKmpAlgo {
 
 
     public static void main(String[] args) {
@@ -66,9 +65,6 @@ public class SearchPattern {
         int patLen = pat.length();
         int textInd = 0;
         int patInd = 0;
-
-//        System.out.println(Arrays.toString(pat.toCharArray()));
-//        System.out.println(Arrays.toString(lcs));
 
         while (textInd < textLen) {
             char textChar = text.charAt(textInd);

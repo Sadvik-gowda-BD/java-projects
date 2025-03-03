@@ -1,4 +1,4 @@
-package com.it.dsa.algorithms;
+package com.it.dsa.algorithms.sort;
 
 import java.util.Arrays;
 

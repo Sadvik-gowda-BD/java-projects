@@ -16,7 +16,7 @@ public class CustomBinaryTree {
             return new BinaryNode(data);
         }
 
-        if (data < node.data) {
+        if (data < node.val) {
             insert(node.left, data);
         } else {
             insert(node.right, data);
@@ -34,7 +34,7 @@ public class CustomBinaryTree {
         if (node == null) {
             return;
         }
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
         preOrderTraversalRecursion(node.left);
         preOrderTraversalRecursion(node.right);
     }
@@ -51,7 +51,7 @@ public class CustomBinaryTree {
             return;
         }
         inOrderTraversalRecursion(node.left);
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
         inOrderTraversalRecursion(node.right);
     }
 
@@ -70,7 +70,7 @@ public class CustomBinaryTree {
         }
         postOrderTraversalRecursion(node.left);
         postOrderTraversalRecursion(node.right);
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
     }
 
     public void postOrderTraversalIterator(BinaryNode root) {
