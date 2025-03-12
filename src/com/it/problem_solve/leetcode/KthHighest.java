@@ -1,5 +1,6 @@
 package com.it.problem_solve.leetcode;
 
+import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class KthHighest {
@@ -10,6 +11,10 @@ public class KthHighest {
         System.out.println(logicByPriorityQueue(array, k));
     }
 
+    /*
+        Time complexity: O(nlogk)
+        Space complexity: O(k)
+     */
     public static int logicByPriorityQueue(int[] array, int k) {
         // Create a min-heap with a size of k
         PriorityQueue<Integer> minHeap = new PriorityQueue<>(k); //Collections.reverseOrder() for kth lowest
@@ -26,6 +31,15 @@ public class KthHighest {
         }
         // The root of the min-heap is the kth highest element
         return minHeap.peek();
+    }
+
+    /*  logic by sorting
+        Time complexity: O(nlogn)
+        Space complexity: O(sort)
+     */
+    public int findKthLargest(int[] nums, int k) {
+        Arrays.sort(nums);
+        return nums[nums.length - k];
     }
 
 }

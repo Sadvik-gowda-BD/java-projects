@@ -12,6 +12,9 @@ Dijkstra Algorithm
 
 It will work for both directed and non-directed graph. But we've to convert non-directed to directed graph.
 It won't work for -ve edges
+Dijkstra's Algorithm works for graphs with cycles, but only if all edge weights are non-negative.
+
+Also Dijkstra may end up with infinite loop for -ve edge cycle
  */
 public class DijkstraAlgorithm {
 
@@ -37,8 +40,7 @@ public class DijkstraAlgorithm {
         System.out.println(solveByPq(adj2, src2));
     }
 
-    public static ArrayList<Integer> solveByPq
-            (List<List<iPair>> adj, int src) {
+    public static ArrayList<Integer> solveByPq(List<List<iPair>> adj, int src) {
 
         ArrayList<Integer> ans = new ArrayList<>();
         int V = adj.size();

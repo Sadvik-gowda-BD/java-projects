@@ -31,7 +31,7 @@ public class BellmanFord {
         Arrays.fill(distArray, MAX);
         distArray[src] = 0;
 
-        //Do relaxation of V-1 time
+        //Do relaxation of V time
         for (int i = 0; i < V - 1; i++) {
             for (int[] edge : edges) {
 
@@ -45,7 +45,7 @@ public class BellmanFord {
             }
         }
 
-        //Relaxation Vth time to check negative cycles, if its able relax then negative cycle is exits
+        //Relaxation V+1th time to check negative cycles, if its able relax then negative cycle is exits
         for (int[] edge : edges) {
             int u = edge[0];
             int v = edge[1];

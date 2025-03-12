@@ -29,14 +29,14 @@ public class DecimalToBinary {
     static Data binaryToDecimal1(ListNode<Integer> head) {
 
         if (head.next == null) {
-            if (head.data == 1) {
+            if (head.val == 1) {
                 return new Data(1, 1);
             }
             return new Data(1, 0);
         }
         Data res = binaryToDecimal1(head.next);
         res.mul *= 2;
-        res.ans = res.ans + (res.mul * head.data);
+        res.ans = res.ans + (res.mul * head.val);
         return res;
     }
 
@@ -55,7 +55,7 @@ public class DecimalToBinary {
 
         while (head != null){
             sum *= 2;
-            sum += head.data;
+            sum += head.val;
             head = head.next;
         }
         return sum;

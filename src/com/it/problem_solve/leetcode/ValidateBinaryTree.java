@@ -30,6 +30,23 @@ public class ValidateBinaryTree {
 
     }
 
+    //Solution by using InOrder traverse
+    private static Integer pre = null;
+    public static boolean inOrder(BinaryNode root) {
+        if (root == null) {
+            return true;
+        }
+
+        boolean left = inOrder(root.left);
+        if (pre != null && pre >= root.val) {
+            return false;
+        }
+        pre = root.val;
+        boolean right = inOrder(root.right);
+
+        return right && left;
+    }
+
     private static boolean solve(BinaryNode root, int minVal, int maxVal) {
 
         if (root == null) {

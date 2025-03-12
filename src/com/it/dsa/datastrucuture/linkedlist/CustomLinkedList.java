@@ -20,7 +20,7 @@ public class CustomLinkedList<E> {
         ListNode<E> currentNode = head;
         ListNode<E> previousNode = null;
         while (currentNode != null) {
-            if (currentNode.data.equals(data)) {
+            if (currentNode.val.equals(data)) {
                 if (previousNode != null) {
                     previousNode.next = currentNode.next;
                 } else {
@@ -43,7 +43,7 @@ public class CustomLinkedList<E> {
         }
         ListNode currentNode = head;
         while (currentNode != null) {
-            System.out.print(currentNode.data +" ");
+            System.out.print(currentNode.val +" ");
             currentNode = currentNode.next;
         }
         System.out.println();
