@@ -1,4 +1,4 @@
-package com.it.typesofclass.NestedInnerClass;
+package com.it.java.typesofclass.NestedInnerClass;
 
 /*
 1. Nested Inner Class

@@ -1,4 +1,4 @@
-package com.it.encapsulation;
+package com.it.java.encapsulation;
 
 import java.io.Serializable;
 

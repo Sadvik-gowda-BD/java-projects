@@ -1,4 +1,4 @@
-package com.it.typesofclass.MethodLocalInner;
+package com.it.java.typesofclass.MethodLocalInner;
 
 /*
 A method local inner class is defined within a method of the outer class.

@@ -31,7 +31,7 @@ public class WordLadder2 {
 
         String beginWord2 = "der";
         String endWord2 = "dfs";
-        List<String> wordList2 = Arrays.asList("des","der","dfr","dgt","dfs");
+        List<String> wordList2 = Arrays.asList("des", "der", "dfr", "dgt", "dfs");
 
         System.out.println(solve(beginWord, endWord, wordList));
 
@@ -62,11 +62,11 @@ public class WordLadder2 {
 
                 List<String> currList = q.poll();
                 String currWord = currList.get(currList.size() - 1);
-                wordSet.remove(currWord);
+                wordSet.remove(currWord); // Act as a visited node check, we can also add ele to visSet and then add to queue if !visSet.contains (newStr).
 
                 if (endWord.equals(currWord)) {
 
-                    if(ans.size() == 0){
+                    if (ans.size() == 0) {
                         ans.add(currList);
                     } else if (ans.get(0).size() == currList.size()) {
                         ans.add(currList);

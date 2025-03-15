@@ -1,4 +1,4 @@
-package com.it.encapsulation;
+package com.it.java.encapsulation;
 
 public class EmployeePOJO {
 

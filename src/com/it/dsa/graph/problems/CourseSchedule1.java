@@ -35,7 +35,9 @@ public class CourseSchedule1 {
         }
 
         for (int i = 0; i < prerequisites.length; i++) {
-            adjList.get(prerequisites[i][0]).add(prerequisites[i][1]);
+            int course = prerequisites[i][0];
+            int preRequisit = prerequisites[i][1];
+            adjList.get(preRequisit).add(course);
         }
         ArrayList<Integer> res = solveByBfs(numCourses, adjList);
 

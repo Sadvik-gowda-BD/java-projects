@@ -1,4 +1,4 @@
-package com.it.typesofclass.StaticNestedClass;
+package com.it.java.typesofclass.StaticNestedClass;
 
 /*
 A static nested class is a static class defined within another class.

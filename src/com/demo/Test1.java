@@ -17,59 +17,126 @@ import java.util.TreeSet;
 public class Test1 {
 
 
-
-
-    //1->2->3->4->5->6->7
-    //3->2->1->4->7->6->5
     public static void main(String[] args) throws Exception {
 
 
-        ListNode l1 = new ListNode(1);
-        ListNode l2 = new ListNode(2);
-        ListNode l3 = new ListNode(3);
-        ListNode l4 = new ListNode(4);
-        ListNode l5 = new ListNode(5);
-        l1.next = l2;
-        l2.next = l4;
-        l3.next = l4;
-        l4.next = l5;
+        Trie t = new Trie();
+        //t.insert("ab");
+        t.insert("a");
 
-        ListNode<Integer> d = new ListNode(-10);
-        d.next = l1;
+        //System.out.println(t.search("ab"));
 
-
-
-        ListNode n = new ListNode(0);
-
-        insert(n, d);
-
-        ListNode cn = d.next;
-        while (cn != null) {
-            System.out.println(cn.val);
-            cn = cn.next;
-        }
+        System.out.println(t.searchDot(t.base, ".", 0));
 
     }
 
-    public static void insert(ListNode<Integer> node, ListNode<Integer> dummy) {
-        //System.out.println(3);
-        ListNode<Integer> pre = dummy;
-        ListNode<Integer> cur = pre.next;
+}
 
-        while (cur != null) {
+class Trie {
 
-            if (cur.val >= node.val) {
-                ListNode temp = pre.next;
-                pre.next = node;
-                node.next = temp;
-                return;
+    TrieNode base = new TrieNode();
+
+    public boolean startsWith(String st) {
+
+        int len = st.length();
+        TrieNode currNode = base;
+        for (int i = 0; i < len; i++) {
+            int ind = st.charAt(i) - 'a';
+            TrieNode node = currNode.arr[ind];
+
+            if (node == null) {
+                return false;
             }
-            pre = cur;
-            cur = cur.next;
+            if (i == len - 1) {
+                return true;
+            }
+            currNode = node;
+        }
+
+        return false;
+    }
+
+    public void insert(String st) {
+        int len = st.length();
+        TrieNode currNode = base;
+        for (int i = 0; i < len; i++) {
+            int ind = st.charAt(i) - 'a';
+
+            TrieNode node;
+            if (currNode.arr[ind] == null) {
+                node = new TrieNode();
+
+            } else {
+                node = currNode.arr[ind];
+            }
+
+            if (i == len - 1) {
+                node.isWord = true;
+            }
+            currNode.arr[ind] = node;
+            currNode = node;
         }
     }
 
+    public boolean searchDot(TrieNode root, String st, int start) {
+        int len = st.length();
 
+        for (int i = start; i < len; i++) {
+            char ch = st.charAt(i);
+            if (ch != '.') {
+                int ind = ch - 'a';
+                TrieNode node = root.arr[ind];
+                if (node == null) return false;
 
+                if (start == len - 1 && node.isWord) {
+                    System.out.println("--------");
+                    return true;
+                } else {
+                    return searchDot(node, st, i + 1);
+                }
+            } else {
+                TrieNode[] nodes = root.arr;
+                for (int j = 0; j < 26; j++) {
+                    TrieNode node = nodes[j];
+                    if (node != null) {
+                        if (i == len - 1 && node.isWord) {
+                            return true;
+                        }
+                        boolean res = searchDot(node, st, i + 1);
+                        if (res) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
 
+        return false;
+    }
+
+    public boolean search(String st) {
+        int len = st.length();
+
+        TrieNode currNode = base;
+        for (int i = 0; i < len; i++) {
+            int ind = st.charAt(i) - 'a';
+
+            TrieNode node = currNode.arr[ind];
+
+            if (node == null) {
+                return false;
+            }
+            if (i == len - 1 && node.isWord) {
+                return true;
+            }
+            currNode = node;
+        }
+        return false;
+    }
+}
+
+class TrieNode {
+    TrieNode[] arr = new TrieNode[26];
+    boolean isWord;
 }

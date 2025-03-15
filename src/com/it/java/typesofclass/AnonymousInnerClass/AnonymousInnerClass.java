@@ -1,4 +1,4 @@
-package com.it.typesofclass.AnonymousInnerClass;
+package com.it.java.typesofclass.AnonymousInnerClass;
 
 /*
 An anonymous inner class is a class without a name and is defined and instantiated in a single statement.

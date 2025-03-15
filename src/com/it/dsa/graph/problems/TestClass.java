@@ -3,6 +3,7 @@ package com.it.dsa.graph.problems;
 import com.it.dsa.graph.representation.DisjointSet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,62 +16,34 @@ public class TestClass {
 
     public static void main(String[] args) {
 
-        int[][] grid = {{1, 1, 1, 1, 1, 1, 1, 0}, {
-                1, 0, 0, 0, 0, 1, 1, 0}, {1, 0, 1, 0, 1, 1, 1, 0},
-                {1, 0, 0, 0, 0, 1, 0, 1}, {1, 1, 1, 1, 1, 1, 1, 0}};
-
-        System.out.println(solve(grid));
+        solve();
+        System.out.println();
 
     }
 
-    public static int solve(int[][] grid) {
+    public static void solve() {
+        String st = "abc";
+        HashMap<String, List<String>> hm = new HashMap<>();
+        hm.put("a", List.of("b", "c"));
+        hm.put("b", List.of("a", "c"));
+        hm.put("c", List.of("a", "b"));
 
-        int rowLen = grid.length;
-        int colLen = grid[0].length;
+        Queue<String> q = new LinkedList<>();
+        Set<String> set = new HashSet<>();
 
-        int closedIsland = 0;
-        boolean[][] vis = new boolean[rowLen][colLen];
+        q.add("a");
+        set.add("a");
 
-        for (int i = 0; i < rowLen; i++) {
-            for (int j = 0; j < colLen; j++) {
-                if (grid[i][j] == 0 && !vis[i][j]) {
-                    boolean res = dfs(grid, vis, i, j);
-                    if (res) {
-                        closedIsland++;
-                    }
+        while (!q.isEmpty()) {
+            String node = q.poll();
+            System.out.println(node);
+            for (String n : hm.get(node)) {
+                if (!set.contains(n)) {
+                    q.add(n);
+                    set.add(n);
                 }
             }
         }
-
-        return closedIsland;
-    }
-
-    public static boolean dfs(int[][] grid, boolean[][] vis, int r, int c) {
-
-        int rowLen = grid.length;
-        int colLen = grid[0].length;
-
-        if (r < 0 || r >= rowLen || c < 0 || c >= colLen || grid[r][c] == 1 || vis[r][c]) {
-            return true;
-        }
-
-        vis[r][c] = true;
-
-        if (isBoundry(r, c, rowLen, colLen)) {
-            return false;
-        }
-
-        //System.out.println("r:" + r + " c:" + c);
-
-        return dfs(grid, vis, r - 1, c) &&
-                dfs(grid, vis, r, c - 1) &&
-                dfs(grid, vis, r + 1, c) &&
-                dfs(grid, vis, r, c + 1);
-
-    }
-
-    private static boolean isBoundry(int r, int c, int rowLen, int colLen) {
-        return r == 0 || c == 0 || r == rowLen - 1 || c == colLen - 1;
     }
 
 

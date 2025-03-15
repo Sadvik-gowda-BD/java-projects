@@ -2,8 +2,8 @@ package com.it.dsa.datastrucuture.trie;
 
 public class TrieNode {
 
-    TrieNode[] links = new TrieNode[26];
-    boolean isWord = false;
+    public TrieNode[] links = new TrieNode[26];
+    public boolean isWord = false;
 
     public boolean isWord() {
         return isWord;
@@ -24,6 +24,5 @@ public class TrieNode {
     public void setAsWord() {
         this.isWord = true;
     }
-
 
 }

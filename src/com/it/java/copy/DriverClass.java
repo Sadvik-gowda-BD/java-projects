@@ -1,4 +1,4 @@
-package com.it.copy;
+package com.it.java.copy;
 
 import java.util.Arrays;
 
