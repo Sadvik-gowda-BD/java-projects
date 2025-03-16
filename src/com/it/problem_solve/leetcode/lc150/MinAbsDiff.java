@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 //530. Minimum Absolute Difference in BST
 public class MinAbsDiff {
@@ -12,7 +12,7 @@ public class MinAbsDiff {
 
     }
 
-    public int solve(BinaryNode root) {
+    public int solve(TreeNode root) {
         if (root == null) {
             return Integer.MAX_VALUE;
         }

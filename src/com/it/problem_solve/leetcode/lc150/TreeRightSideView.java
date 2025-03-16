@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,20 +14,20 @@ public class TreeRightSideView {
 
     }
 
-    public static List<Integer> solve(BinaryNode root) {
+    public static List<Integer> solve(TreeNode root) {
         List<Integer> list = new ArrayList<>();
 
         if (root == null) {
             return Collections.emptyList();
         }
 
-        Queue<BinaryNode> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
 
         while (!q.isEmpty()) {
             int len = q.size();
             for (int i = 0; i < len; i++) {
-                BinaryNode node = q.poll();
+                TreeNode node = q.poll();
                 if (i == len - 1) {
                     list.add(node.val);
                 }
@@ -39,20 +39,20 @@ public class TreeRightSideView {
     }
 
     //add right node first to the queue
-    public static List<Integer> solve2(BinaryNode root) {
+    public static List<Integer> solve2(TreeNode root) {
         List<Integer> list = new ArrayList<>();
 
         if (root == null) {
             return Collections.emptyList();
         }
 
-        Queue<BinaryNode> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
 
         while (!q.isEmpty()) {
             int len = q.size();
             for (int i = 0; i < len; i++) {
-                BinaryNode node = q.poll();
+                TreeNode node = q.poll();
                 if (i == 0) {
                     list.add(node.val);
                 }
@@ -63,7 +63,7 @@ public class TreeRightSideView {
         return list;
     }
 
-    void dfs(BinaryNode node, List<Integer> result, int currDepth) {
+    void dfs(TreeNode node, List<Integer> result, int currDepth) {
         if (node == null) return;
         if (currDepth >= result.size()) {
             result.add(node.val);

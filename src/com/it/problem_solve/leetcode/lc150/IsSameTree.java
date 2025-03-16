@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 public class IsSameTree {
 
@@ -8,7 +8,7 @@ public class IsSameTree {
 
     }
 
-    public static boolean solve(BinaryNode r1, BinaryNode r2) {
+    public static boolean solve(TreeNode r1, TreeNode r2) {
 
         if (r1 == null && r2 == null) {
             return true;

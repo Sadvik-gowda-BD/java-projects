@@ -2,7 +2,7 @@ package com.it.dsa.datastrucuture.binarytree;
 
 public class CustomBinaryTree {
 
-    private BinaryNode head;
+    private TreeNode head;
 
     public void insert(int data) {
 
@@ -11,9 +11,9 @@ public class CustomBinaryTree {
         }
     }
 
-    private BinaryNode insert(BinaryNode node, int data) {
+    private TreeNode insert(TreeNode node, int data) {
         if(node == null){
-            return new BinaryNode(data);
+            return new TreeNode(data);
         }
 
         if (data < node.val) {
@@ -30,7 +30,7 @@ public class CustomBinaryTree {
         Node n1 = new Node(3);
         Node n1 = new Node(4);
      */
-    public void preOrderTraversalRecursion(BinaryNode node) {
+    public void preOrderTraversalRecursion(TreeNode node) {
         if (node == null) {
             return;
         }
@@ -46,7 +46,7 @@ public class CustomBinaryTree {
         Then the root node for that subtree is traversed
         Finally, the right subtree is traversed
      */
-    public void inOrderTraversalRecursion(BinaryNode node) {
+    public void inOrderTraversalRecursion(TreeNode node) {
         if (node == null) {
             return;
         }
@@ -55,7 +55,7 @@ public class CustomBinaryTree {
         inOrderTraversalRecursion(node.right);
     }
 
-    public void inOrderTraversalIterator(BinaryNode root) {
+    public void inOrderTraversalIterator(TreeNode root) {
 
     }
 
@@ -64,7 +64,7 @@ public class CustomBinaryTree {
     Then the right subtree is traversed
     Finally, the root node of the subtree is traversed
      */
-    public void postOrderTraversalRecursion(BinaryNode node) {
+    public void postOrderTraversalRecursion(TreeNode node) {
         if (node == null) {
             return;
         }
@@ -73,12 +73,12 @@ public class CustomBinaryTree {
         System.out.print(node.val + " ");
     }
 
-    public void postOrderTraversalIterator(BinaryNode root) {
+    public void postOrderTraversalIterator(TreeNode root) {
 
     }
 
 
-    public void levelOrderTraversal(BinaryNode node) {
+    public void levelOrderTraversal(TreeNode node) {
 
     }
 

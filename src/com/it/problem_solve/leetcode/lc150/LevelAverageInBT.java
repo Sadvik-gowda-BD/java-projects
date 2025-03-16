@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -13,16 +13,16 @@ public class LevelAverageInBT {
 
     }
 
-    public static List<Double> solve(BinaryNode root) {
+    public static List<Double> solve(TreeNode root) {
         List<Double> list = new ArrayList<>();
 
-        Queue<BinaryNode> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()) {
             int size = q.size();
             double sum = 0;
             for (int i = 0; i < size; i++) {
-                BinaryNode node = q.poll();
+                TreeNode node = q.poll();
                 sum += node.val;
 
                 if (node.left != null) q.add(node.left);

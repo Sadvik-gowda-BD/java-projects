@@ -1,7 +1,5 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 

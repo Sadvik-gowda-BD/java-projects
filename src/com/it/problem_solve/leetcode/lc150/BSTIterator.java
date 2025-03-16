@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -14,7 +14,7 @@ public class BSTIterator {
 
     }
 
-    public void insert(BinaryNode root) {
+    public void insert(TreeNode root) {
         if (root == null) return;
 
         insert(root.left);
@@ -34,9 +34,9 @@ public class BSTIterator {
     // -------------------------------------------------------
     //              Approach 2
 
-    Stack<BinaryNode> stack = new Stack<>();
-    public void addToStack(BinaryNode root) {
-        BinaryNode curr = root;
+    Stack<TreeNode> stack = new Stack<>();
+    public void addToStack(TreeNode root) {
+        TreeNode curr = root;
         while (curr != null) {
             stack.push(curr);
             curr = curr.left;
@@ -44,7 +44,7 @@ public class BSTIterator {
     }
 
     public int next2() {
-        BinaryNode node = stack.pop();
+        TreeNode node = stack.pop();
         if (node.right != null) {
             addToStack(node.right);
         }

@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,14 +15,14 @@ public class LevelOrderZigZag {
         System.out.println();
     }
 
-    public static List<List<Integer>> solve(BinaryNode root) {
+    public static List<List<Integer>> solve(TreeNode root) {
 
         if (root == null) {
             return Collections.emptyList();
         }
 
         List<List<Integer>> res = new ArrayList<>();
-        Queue<BinaryNode> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
         boolean isRightToLeft = false;
         q.add(root);
 
@@ -32,7 +32,7 @@ public class LevelOrderZigZag {
             LinkedList<Integer> ls = new LinkedList<>();
 
             for (int i = 0; i < size; i++) {
-                BinaryNode node = q.poll();
+                TreeNode node = q.poll();
                 if (isRightToLeft) {
                     ls.addFirst(node.val);
                 } else {

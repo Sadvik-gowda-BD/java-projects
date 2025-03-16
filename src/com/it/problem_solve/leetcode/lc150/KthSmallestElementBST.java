@@ -1,10 +1,10 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 public class KthSmallestElementBST {
 
-    static BinaryNode node = null;
+    static TreeNode node = null;
     static int count;
 
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class KthSmallestElementBST {
     }
 
 
-    public static void solve(BinaryNode root) {
+    public static void solve(TreeNode root) {
 
         if (root == null || node != null) {
             return;

@@ -1,6 +1,6 @@
 package com.it.dsa.datastrucuture.binarytree.traversal;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 import java.util.Stack;
 
@@ -20,7 +20,7 @@ public class DfsPreInPostOrder {
         ✔ Serializing & Deserializing a tree.
         ✔ Finding the root first before working on subtrees.
      */
-    public void preOrderTraversal(BinaryNode root) {
+    public void preOrderTraversal(TreeNode root) {
 
         if (root == null) {
             return;
@@ -39,7 +39,7 @@ public class DfsPreInPostOrder {
         ✔ Checking if a tree is a valid BST.
         ✔ Converting a BST to a sorted array.
      */
-    public void inOrderTraversal(BinaryNode root) {
+    public void inOrderTraversal(TreeNode root) {
 
         if (root == null) {
             return;
@@ -59,7 +59,7 @@ public class DfsPreInPostOrder {
 
         Bottom-up approach needed
      */
-    public void postOrderTraversal(BinaryNode root) {
+    public void postOrderTraversal(TreeNode root) {
 
         if (root == null) {
             return;
@@ -70,11 +70,11 @@ public class DfsPreInPostOrder {
         System.out.print(root.val + "--> ");
     }
 
-    public void preOrderTraversalIterator(BinaryNode node) {
-        Stack<BinaryNode> stack = new Stack<>();
+    public void preOrderTraversalIterator(TreeNode node) {
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(node);
         while (!stack.isEmpty()) {
-            BinaryNode temp = stack.pop();
+            TreeNode temp = stack.pop();
             System.out.print(temp.val + " ");
 
             if (temp.right != null) {
@@ -87,9 +87,9 @@ public class DfsPreInPostOrder {
         }
     }
 
-    public static void inorderIterative(BinaryNode root) {
-        Stack<BinaryNode> stack = new Stack<>();
-        BinaryNode curr = root;
+    public static void inorderIterative(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
 
         while (curr != null || !stack.isEmpty()) {
             // Reach the leftmost node of the current node

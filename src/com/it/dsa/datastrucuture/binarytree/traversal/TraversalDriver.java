@@ -1,20 +1,20 @@
 package com.it.dsa.datastrucuture.binarytree.traversal;
 
 import com.it.dsa.datastrucuture.binarytree.CustomBinaryTree;
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 public class TraversalDriver {
 
     public static void main(String[] args) {
         CustomBinaryTree bt = new CustomBinaryTree();
 
-        BinaryNode n1 = new BinaryNode(1);
-        BinaryNode n2 = new BinaryNode(2);
-        BinaryNode n3 = new BinaryNode(3);
-        BinaryNode n4 = new BinaryNode(4);
-        BinaryNode n5 = new BinaryNode(5);
-        BinaryNode n6 = new BinaryNode(6);
-        BinaryNode n7 = new BinaryNode(7);
+        TreeNode n1 = new TreeNode(1);
+        TreeNode n2 = new TreeNode(2);
+        TreeNode n3 = new TreeNode(3);
+        TreeNode n4 = new TreeNode(4);
+        TreeNode n5 = new TreeNode(5);
+        TreeNode n6 = new TreeNode(6);
+        TreeNode n7 = new TreeNode(7);
 
         n1.left = n2;
         n1.right = n3;

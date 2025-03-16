@@ -1,24 +1,24 @@
 package com.it.dsa.datastrucuture.binarytree.traversal;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class BfsLevelOrderTraversal {
 
-    public void levelOrderTraversal(BinaryNode root) {
+    public static void levelOrderTraversal(TreeNode root) {
 
         if (root == null) {
             return;
         }
 
-        Queue<BinaryNode> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
         while (!queue.isEmpty()) {
 
-            BinaryNode node = queue.poll();
+            TreeNode node = queue.poll();
             System.out.print(node.val + "--> ");
             if (node.left != null) {
                 queue.add(node.left);

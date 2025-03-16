@@ -1,12 +1,12 @@
 package com.it.dsa.datastrucuture.binarytree;
 
-public class BinaryNode {
+public class TreeNode {
 
-    public BinaryNode left;
-    public BinaryNode right;
+    public TreeNode left;
+    public TreeNode right;
     public int val;
 
-    public BinaryNode(int val) {
+    public TreeNode(int val) {
         this.left = null;
         this.right = null;
         this.val = val;

@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 public class PathSum {
 
@@ -8,7 +8,7 @@ public class PathSum {
 
     }
 
-    public static boolean solve(BinaryNode root, int currSum, int reqSum) {
+    public static boolean solve(TreeNode root, int currSum, int reqSum) {
         if (root == null) {
             return false;
         }

@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -11,7 +11,7 @@ public class SymmetricTree {
 
     }
 
-    public static boolean solveByDfs(BinaryNode root) {
+    public static boolean solveByDfs(TreeNode root) {
 
         if (root == null) {
             return true;
@@ -19,7 +19,7 @@ public class SymmetricTree {
         return solveByDfs(root.left, root.right);
     }
 
-    public static boolean solveByDfs(BinaryNode left, BinaryNode right) {
+    public static boolean solveByDfs(TreeNode left, TreeNode right) {
 
         if (left == null || right == null) {
             return left == null && right == null;
@@ -31,18 +31,18 @@ public class SymmetricTree {
         return solveByDfs(left.left, right.right) && solveByDfs(left.right, right.left);
     }
 
-    public static boolean solveByBfs(BinaryNode root) {
+    public static boolean solveByBfs(TreeNode root) {
         if (root == null) {
             return true;
         }
 
-        Queue<BinaryNode> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root.left);
         q.add(root.right);
 
         while (!q.isEmpty()) {
-            BinaryNode n1 = q.poll();
-            BinaryNode n2 = q.poll();
+            TreeNode n1 = q.poll();
+            TreeNode n2 = q.poll();
 
             if (n1 == null && n2 == null) {
                 continue;

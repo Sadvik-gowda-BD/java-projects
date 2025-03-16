@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 public class CountNodesInBT {
 
@@ -8,7 +8,7 @@ public class CountNodesInBT {
 
     }
 
-    public static int solve(BinaryNode root) {
+    public static int solve(TreeNode root) {
         if (root == null) {
             return 0;
         }

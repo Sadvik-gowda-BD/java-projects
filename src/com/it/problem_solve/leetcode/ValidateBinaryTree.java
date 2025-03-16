@@ -1,18 +1,18 @@
 package com.it.problem_solve.leetcode;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 public class ValidateBinaryTree {
 
     public static void main(String[] args) {
 
-        BinaryNode n10 = new BinaryNode(10);
-        BinaryNode n5 = new BinaryNode(5);
-        BinaryNode n2 = new BinaryNode(2);
-        BinaryNode n4 = new BinaryNode(4);
-        BinaryNode n15 = new BinaryNode(15);
-        BinaryNode n12 = new BinaryNode(12);
-        BinaryNode n17 = new BinaryNode(17);
+        TreeNode n10 = new TreeNode(10);
+        TreeNode n5 = new TreeNode(5);
+        TreeNode n2 = new TreeNode(2);
+        TreeNode n4 = new TreeNode(4);
+        TreeNode n15 = new TreeNode(15);
+        TreeNode n12 = new TreeNode(12);
+        TreeNode n17 = new TreeNode(17);
 
         n10.left = n5;
         n10.right = n15;
@@ -32,7 +32,7 @@ public class ValidateBinaryTree {
 
     //Solution by using InOrder traverse
     private static Integer pre = null;
-    public static boolean inOrder(BinaryNode root) {
+    public static boolean inOrder(TreeNode root) {
         if (root == null) {
             return true;
         }
@@ -47,7 +47,7 @@ public class ValidateBinaryTree {
         return right && left;
     }
 
-    private static boolean solve(BinaryNode root, int minVal, int maxVal) {
+    private static boolean solve(TreeNode root, int minVal, int maxVal) {
 
         if (root == null) {
             return true;

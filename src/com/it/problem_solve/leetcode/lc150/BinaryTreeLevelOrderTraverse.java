@@ -1,7 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
-import com.it.dsa.datastrucuture.linkedlist.ListNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -14,13 +13,13 @@ public class BinaryTreeLevelOrderTraverse {
 
     }
 
-    public static List<List<Integer>> solve(BinaryNode root) {
+    public static List<List<Integer>> solve(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) {
             return res;
         }
-        BinaryNode node;
-        Queue<BinaryNode> q = new LinkedList<>();
+        TreeNode node;
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()) {
             int size = q.size();
@@ -38,7 +37,7 @@ public class BinaryTreeLevelOrderTraverse {
     }
 
 
-    public void levelOrder(BinaryNode root, int level, List<List<Integer>> result) {
+    public void levelOrder(TreeNode root, int level, List<List<Integer>> result) {
         if (root == null) {
             return;
         }

@@ -1,19 +1,19 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 public class LeastCommonAncestor {
 
     public boolean isP;
     public boolean isQ;
-    public BinaryNode res;
+    public TreeNode res;
 
     public static void main(String[] args) {
 
-        BinaryNode b1 = new BinaryNode(1);
-        BinaryNode b2 = new BinaryNode(2);
-        BinaryNode b3 = new BinaryNode(3);
-        BinaryNode b4 = new BinaryNode(4);
+        TreeNode b1 = new TreeNode(1);
+        TreeNode b2 = new TreeNode(2);
+        TreeNode b3 = new TreeNode(3);
+        TreeNode b4 = new TreeNode(4);
 
         b1.left = b2;
         b1.right = b3;
@@ -24,7 +24,7 @@ public class LeastCommonAncestor {
 //        l.solve(b1, b2, b4);
 //        System.out.println(l.res.val);
 
-        BinaryNode result = l.lowestCommonAncestor(b1, b4, b2);
+        TreeNode result = l.lowestCommonAncestor(b1, b4, b2);
         System.out.println(result.val);
 
 
@@ -32,14 +32,14 @@ public class LeastCommonAncestor {
 
 
     //Simple solution
-    public BinaryNode lowestCommonAncestor(BinaryNode root, BinaryNode p, BinaryNode q) {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {
             if (root != null) System.out.println("root: " + root.val);
             return root;
         }
 
-        BinaryNode left = lowestCommonAncestor(root.left, p, q);
-        BinaryNode right = lowestCommonAncestor(root.right, p, q);
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
 
         if (left != null && right != null) {
             return root;
@@ -48,7 +48,7 @@ public class LeastCommonAncestor {
         return left != null ? left : right;
     }
 
-    public BinaryNode solve(BinaryNode root, BinaryNode p, BinaryNode q) {
+    public TreeNode solve(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
             return null;
         }
@@ -57,8 +57,8 @@ public class LeastCommonAncestor {
             return res;
         }
 
-        BinaryNode left = solve(root.left, p, q);
-        BinaryNode right = solve(root.right, p, q);
+        TreeNode left = solve(root.left, p, q);
+        TreeNode right = solve(root.right, p, q);
 
         if (left != null && right != null && res == null) {
             res = root;

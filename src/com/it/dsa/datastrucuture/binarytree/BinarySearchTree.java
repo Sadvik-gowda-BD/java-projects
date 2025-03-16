@@ -2,9 +2,9 @@ package com.it.dsa.datastrucuture.binarytree;
 
 public class BinarySearchTree {
 
-    public BinaryNode insertByRec(BinaryNode root, int val) {
+    public TreeNode insertByRec(TreeNode root, int val) {
         if (root == null) {
-            return new BinaryNode(val);
+            return new TreeNode(val);
         }
         if (root.val < val) {
             root.left = insertByRec(root.left, val);
@@ -14,26 +14,26 @@ public class BinarySearchTree {
         return root;
     }
 
-    public BinaryNode insertByItr(int data, BinaryNode root) {
+    public TreeNode insertByItr(int data, TreeNode root) {
 
         if (root == null) {
-            return new BinaryNode(data);
+            return new TreeNode(data);
         }
 
-        BinaryNode currNode = root;
+        TreeNode currNode = root;
         while (true) {
             if (data <= currNode.val) {
                 if (currNode.left != null) {
                     currNode = currNode.left;
                 } else {
-                    currNode.left = new BinaryNode(data);
+                    currNode.left = new TreeNode(data);
                     break;
                 }
             } else {
                 if (currNode.right != null) {
                     currNode = currNode.right;
                 } else {
-                    currNode.right = new BinaryNode(data);
+                    currNode.right = new TreeNode(data);
                     break;
                 }
             }
@@ -42,7 +42,7 @@ public class BinarySearchTree {
     }
 
 
-    public BinaryNode deleteEle(int data, BinaryNode root) {
+    public TreeNode deleteEle(int data, TreeNode root) {
 
         if (root == null) {
             return null;
@@ -52,7 +52,7 @@ public class BinarySearchTree {
             return deleteHelper(root);
         }
 
-        BinaryNode currNode = root;
+        TreeNode currNode = root;
         while (currNode != null) {
             if (data < currNode.val) {
                 if (currNode.left != null && currNode.left.val == data) {
@@ -71,7 +71,7 @@ public class BinarySearchTree {
         return root;
     }
 
-    private BinaryNode deleteHelper(BinaryNode node) {
+    private TreeNode deleteHelper(TreeNode node) {
 
         if (node.left == null) {
             return node.right;
@@ -81,13 +81,13 @@ public class BinarySearchTree {
             return node.left;
         }
 
-        BinaryNode rightChild = getLastRight(node.left);
+        TreeNode rightChild = getLastRight(node.left);
         rightChild.right = node.right;
         return node.left;
     }
 
-    private BinaryNode getLastRight(BinaryNode node) {
-        BinaryNode currNode = node;
+    private TreeNode getLastRight(TreeNode node) {
+        TreeNode currNode = node;
         while (currNode.right != null) {
             currNode = currNode.right;
         }

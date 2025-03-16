@@ -1,14 +1,13 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.binarytree.BinaryNode;
+import com.it.dsa.datastrucuture.binarytree.TreeNode;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class FlattenTreeToLnkList {
 
-    private BinaryNode prev = null;
+    private TreeNode prev = null;
 
     public static void main(String[] args) {
 
@@ -16,7 +15,7 @@ public class FlattenTreeToLnkList {
     }
 
     //Optimized approach O(n)
-    public void flatten(BinaryNode root) {
+    public void flatten(TreeNode root) {
         if (root == null)
             return;
         flatten(root.right);
@@ -26,14 +25,14 @@ public class FlattenTreeToLnkList {
         prev = root;
     }
 
-    public static void solve(BinaryNode node) {
-        List<BinaryNode> list = new ArrayList<>();
+    public static void solve(TreeNode node) {
+        List<TreeNode> list = new ArrayList<>();
         solve(node, list);
-        BinaryNode root = null;
-        BinaryNode pre = null;
+        TreeNode root = null;
+        TreeNode pre = null;
 
         for (int i = 0; i < list.size(); i++) {
-            BinaryNode cn = list.get(i);
+            TreeNode cn = list.get(i);
             cn.left = null;
             if (root == null) {
                 pre = cn;
@@ -44,7 +43,7 @@ public class FlattenTreeToLnkList {
     }
 
 
-    public static void solve(BinaryNode node, List<BinaryNode> list) {
+    public static void solve(TreeNode node, List<TreeNode> list) {
         if (node == null) {
             return;
         }
