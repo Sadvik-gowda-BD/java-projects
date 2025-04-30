@@ -11,7 +11,6 @@ In other words, return true if one of s1's permutations is the substring of s2.
 public class PermutationOfString {
 
     public static void main(String[] args) {
-
         System.out.println(solve("ab", "eidbaooo"));
         System.out.println(solve("ab", "eidboaoo"));
 
@@ -31,7 +30,6 @@ public class PermutationOfString {
             a2[s2.charAt(i) - 'a'] += 1;
         }
 
-
         for (int i = l1; i < l2; i++) {
             if (isFreqEqual(a1, a2)) {
                 return true;
@@ -46,7 +44,6 @@ public class PermutationOfString {
 
 
     private static boolean isFreqEqual(int[] a1, int[] a2) {
-
         for (int i = 0; i < 26; i++) {
             if (a1[i] != a2[i]) {
                 return false;
@@ -54,6 +51,5 @@ public class PermutationOfString {
         }
         return true;
     }
-
 
 }

@@ -17,11 +17,11 @@ public class LengthOfCycleInArray {
          */
 
         int[] arr = {1, 2, 3, 1};
-        System.out.println(solve(arr, 0));
+        System.out.println(solveByHashMap(arr, 0));
         System.out.println(byUsingFastSlowPointer(arr, 0)); // Easy
     }
 
-    private static int solve(int[] arr, int startIndex) {
+    private static int solveByHashMap(int[] arr, int startIndex) {
 
         //Here map works as visited array along with length
         HashMap<Integer, Integer> map = new HashMap<>();

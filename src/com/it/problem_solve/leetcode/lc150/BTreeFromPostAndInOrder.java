@@ -16,7 +16,7 @@ public class BTreeFromPostAndInOrder {
         BTreeFromPostAndInOrder obj = new BTreeFromPostAndInOrder();
 
 
-        int[] preorder = {3, 9, 20, 15, 7};
+        //int[] preorder = {3, 9, 20, 15, 7};
         int[] postOrder = {9, 15, 7, 20, 3};
         int[] inorder = {9, 3, 15, 20, 7};
 
