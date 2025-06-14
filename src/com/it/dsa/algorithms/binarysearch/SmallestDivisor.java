@@ -1,4 +1,4 @@
-package com.it.problem_solve.leetcode;
+package com.it.dsa.algorithms.binarysearch;
 
 import java.util.Arrays;
 
@@ -18,8 +18,32 @@ public class SmallestDivisor {
         System.out.println(solve(nums2, th2));
     }
 
-    /*
+    public static int solveByBS1(int[] nums, int threshold){
 
+        int low =1;
+        int high= Arrays.stream(nums).max().orElse(0);
+        int ans=0;
+
+        while (low<=high){
+
+            int sum = 0;
+            int mid = (low + high) / 2;
+            for (int num : nums) {
+                sum += (int) Math.ceil((double) num / mid);
+            }
+            if(sum>threshold){
+                low=mid+1;
+
+            }else {
+                ans=mid;
+                high=mid-1;
+            }
+        }
+        return ans;
+    }
+
+
+    /*
     answer between : 1 to (max num in  arr)
     if divisor n's sum > threshold - then move right side
      */
@@ -59,7 +83,6 @@ public class SmallestDivisor {
         if (th == nums.length) {
             return e;
         }
-
 
         for (int d = s; d <= e; d++) {
             int sum = 0;

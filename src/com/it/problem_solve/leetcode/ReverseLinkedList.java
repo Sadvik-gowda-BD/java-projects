@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode;
 
-import com.it.dsa.datastrucuture.linkedlist.ListNode;
+import com.it.dsa.datastrucuture.linkedlist.CustomListNode;
 
 public class ReverseLinkedList {
 
@@ -9,13 +9,13 @@ public class ReverseLinkedList {
 
     }
 
-    public static ListNode solve(ListNode head) {
-        ListNode preNode = null;
-        ListNode currNode = head;
+    public static CustomListNode solve(CustomListNode head) {
+        CustomListNode preNode = null;
+        CustomListNode currNode = head;
 
         while (currNode != null) {
 
-            ListNode tempNext = currNode.next;
+            CustomListNode tempNext = currNode.next;
             currNode.next = preNode;
             preNode = currNode;
             currNode = tempNext;

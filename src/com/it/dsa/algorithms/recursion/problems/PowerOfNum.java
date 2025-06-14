@@ -8,7 +8,7 @@ public class PowerOfNum {
 
         System.out.println(findPow2(2, 5, 100));
 
-        //Optimized network
+        //Optimized approach
         System.out.println(findPow3(2, 100));
 
     }

@@ -1,7 +1,5 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.linkedlist.ListNode;
-
 public class PartitionLinkedList {
 
     public static void main(String[] args) {

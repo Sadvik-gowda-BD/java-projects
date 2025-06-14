@@ -41,6 +41,5 @@ public class Others {
             System.out.println(n + " is Even");
         }
 
-
     }
 }

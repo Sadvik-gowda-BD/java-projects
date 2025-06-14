@@ -1,4 +1,4 @@
-package com.it.problem_solve.leetcode;
+package com.it.dsa.algorithms.binarysearch;
 
 import java.util.Arrays;
 
@@ -13,29 +13,27 @@ public class FIndInSortedArray {
         System.out.println(solve(arr, 8));
     }
 
-    //1,3
     public static int solve(int[] arr, int tar) {
-        int len = arr.length;
-        int l = 0;
-        int r = arr.length - 1;
-        int mid = 0;
-        while (l <= r) {
-            mid = (l + r) / 2;
-//            System.out.println("l:" + l + " r:" + r + " m:" + mid);
+        int low = 0;
+        int high = arr.length - 1;
+        int mid;
+        while (low <= high) {
+            mid = (low + high) / 2;
+//            System.out.println("low:" + low + " high:" + high + " m:" + mid);
             if (tar == arr[mid]) {
                 return mid;
                 //Check in sorted part (either left or right half any one is sorted)
-            } else if (arr[mid] >= arr[l]) { //left half is sorted
-                if (tar >= arr[l] && tar < arr[mid]) {
-                    r = mid - 1;
+            } else if (arr[mid] >= arr[low]) { //left half is sorted
+                if (tar >= arr[low] && tar < arr[mid]) {
+                    high = mid - 1;
                 } else {
-                    l = mid + 1;
+                    low = mid + 1;
                 }
             } else { //right half is sorted
-                if (arr[mid] < tar && tar <= arr[r]) {
-                    l = mid + 1;
+                if (arr[mid] < tar && tar <= arr[high]) {
+                    low = mid + 1;
                 } else {
-                    r = mid - 1;
+                    high = mid - 1;
                 }
             }
         }

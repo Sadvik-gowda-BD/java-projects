@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode;
 
-import com.it.dsa.datastrucuture.linkedlist.ListNode;
+import com.it.dsa.datastrucuture.linkedlist.CustomListNode;
 
 public class IntersectionOfTwoLinklist {
 
@@ -8,10 +8,10 @@ public class IntersectionOfTwoLinklist {
 
     }
 
-    private ListNode solve2(ListNode head1, ListNode head2) {
+    private CustomListNode solve2(CustomListNode head1, CustomListNode head2) {
 
-        ListNode h1 = head1;
-        ListNode h2 = head2;
+        CustomListNode h1 = head1;
+        CustomListNode h2 = head2;
 
         while (h1 != h2) {
 
@@ -31,13 +31,13 @@ public class IntersectionOfTwoLinklist {
         return h1;
     }
 
-    private ListNode solve1(ListNode head1, ListNode head2) {
+    private CustomListNode solve1(CustomListNode head1, CustomListNode head2) {
 
         int l1 = 0;
         int l2 = 0;
 
-        ListNode h1 = head1;
-        ListNode h2 = head2;
+        CustomListNode h1 = head1;
+        CustomListNode h2 = head2;
 
         while (h1 != null) {
             l1++;

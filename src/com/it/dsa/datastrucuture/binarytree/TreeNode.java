@@ -11,4 +11,11 @@ public class TreeNode {
         this.right = null;
         this.val = val;
     }
+
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "val=" + val +
+                '}';
+    }
 }

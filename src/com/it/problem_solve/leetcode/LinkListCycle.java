@@ -1,7 +1,7 @@
 package com.it.problem_solve.leetcode;
 
 
-import com.it.dsa.datastrucuture.linkedlist.ListNode;
+import com.it.dsa.datastrucuture.linkedlist.CustomListNode;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,9 +17,9 @@ public class LinkListCycle {
 
 
     //Fast slow pointer
-    public boolean hasCycleByFastSlowPointer(ListNode head) {
-        ListNode fast = head;
-        ListNode slow = head;
+    public boolean hasCycleByFastSlowPointer(CustomListNode head) {
+        CustomListNode fast = head;
+        CustomListNode slow = head;
 
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
@@ -33,10 +33,10 @@ public class LinkListCycle {
         return false;
     }
 
-    public boolean hasCycle2(ListNode head) {
+    public boolean hasCycle2(CustomListNode head) {
 
-        Set<ListNode> set = new HashSet<>();
-        ListNode node = head;
+        Set<CustomListNode> set = new HashSet<>();
+        CustomListNode node = head;
 
         while(node != null){
             if(set.contains(node)){

@@ -1,5 +1,6 @@
-package com.it.problem_solve.leetcode;
+package com.it.dsa.algorithms.binarysearch;
 
+//74. Search a 2D Matrix
 public class SearchTargetIn2DMat {
 
     public static void main(String[] args) {
@@ -14,10 +15,40 @@ public class SearchTargetIn2DMat {
         int t = 3;
 
 
-        System.out.println(solve(mat, 3));
+        System.out.println(solveByBinarySearch1(mat, 3));
+        System.out.println(solveByBinarySearch2(mat, 3));
     }
 
-    public static boolean solve(int[][] mat, int target) {
+    /*
+    Since matrix is sorted treat a single array index from 0 to m*n-1.
+    extract coordinate from index
+     */
+    public static boolean solveByBinarySearch1(int[][] mat, int target) {
+
+        int m = mat.length;
+        int n = mat[0].length;
+
+        int low = 0;
+        int high = (m * n) - 1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+
+            int r = mid / n; // gives row
+            int c = mid % n; // gives column
+
+            if (mat[r][c] == target) return true;
+
+            if (mat[r][c] < target) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return false;
+    }
+
+    public static boolean solveByBinarySearch2(int[][] mat, int target) {
 
         int rows = mat.length;
         int cols = mat[0].length;

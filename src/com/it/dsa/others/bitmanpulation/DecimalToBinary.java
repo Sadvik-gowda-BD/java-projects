@@ -1,6 +1,6 @@
 package com.it.dsa.others.bitmanpulation;
 
-import com.it.dsa.datastrucuture.linkedlist.ListNode;
+import com.it.dsa.datastrucuture.linkedlist.CustomListNode;
 
 public class DecimalToBinary {
 
@@ -26,7 +26,7 @@ public class DecimalToBinary {
 
 
     //msb is head
-    static Data binaryToDecimal1(ListNode<Integer> head) {
+    static Data binaryToDecimal1(CustomListNode<Integer> head) {
 
         if (head.next == null) {
             if (head.val == 1) {
@@ -50,7 +50,7 @@ public class DecimalToBinary {
         }
     }
 
-    public int binaryToDecimal2(ListNode<Integer> head) {
+    public int binaryToDecimal2(CustomListNode<Integer> head) {
         int sum = 0;
 
         while (head != null){

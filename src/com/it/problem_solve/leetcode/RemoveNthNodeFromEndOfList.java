@@ -2,7 +2,7 @@ package com.it.problem_solve.leetcode;
 
 
 import com.it.dsa.datastrucuture.linkedlist.CustomLinkedList;
-import com.it.dsa.datastrucuture.linkedlist.ListNode;
+import com.it.dsa.datastrucuture.linkedlist.CustomListNode;
 
 /*
 19. Remove Nth Node From End of List
@@ -31,18 +31,18 @@ public class RemoveNthNodeFromEndOfList {
 
     }
 
-    private static ListNode solve(ListNode head, int n) {
+    private static CustomListNode solve(CustomListNode head, int n) {
 
         int count = 0;
-        ListNode fp = head;
-        ListNode sp = head;
+        CustomListNode fp = head;
+        CustomListNode sp = head;
 
         while (count < n) {
             fp = fp.next;
             count++;
         }
 
-        ListNode preNode = null;
+        CustomListNode preNode = null;
         while (fp != null) {
             preNode = sp;
             fp = fp.next;

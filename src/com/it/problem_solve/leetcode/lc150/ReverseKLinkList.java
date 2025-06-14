@@ -1,6 +1,6 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.linkedlist.ListNode;
+import com.it.dsa.datastrucuture.linkedlist.CustomListNode;
 
 import java.util.Stack;
 
@@ -9,11 +9,11 @@ public class ReverseKLinkList {
 
     public static void main(String[] args) {
 
-        ListNode l1 = new ListNode(1);
-        ListNode l2 = new ListNode(2);
-        ListNode l3 = new ListNode(3);
-        ListNode l4 = new ListNode(4);
-        ListNode l5 = new ListNode(5);
+        CustomListNode l1 = new CustomListNode(1);
+        CustomListNode l2 = new CustomListNode(2);
+        CustomListNode l3 = new CustomListNode(3);
+        CustomListNode l4 = new CustomListNode(4);
+        CustomListNode l5 = new CustomListNode(5);
         l1.next = l2;
         l2.next = l3;
         l3.next = l4;
@@ -22,7 +22,7 @@ public class ReverseKLinkList {
         solveOptimize(l1, 2, 4);
 
 
-        ListNode cn = l1;
+        CustomListNode cn = l1;
 
         while (cn != null) {
             System.out.println(cn.val);
@@ -33,23 +33,23 @@ public class ReverseKLinkList {
     }
 
     // dummy->1->2->3->4->5
-    public static ListNode solveOptimize(ListNode head, int left, int right) {
+    public static CustomListNode solveOptimize(CustomListNode head, int left, int right) {
 
-        ListNode dummy = new ListNode(0);
+        CustomListNode dummy = new CustomListNode(0);
         dummy.next = head;
 
-        ListNode currNode = dummy.next;
-        ListNode leftPre = dummy;
+        CustomListNode currNode = dummy.next;
+        CustomListNode leftPre = dummy;
 
         for (int i = 0; i < left - 1; i++) {
             leftPre = leftPre.next;
             currNode = currNode.next;
         }
 
-        ListNode pre = null;
+        CustomListNode pre = null;
 
         for (int i = 0; i < (right - left + 1); i++) {
-            ListNode temp = currNode.next;
+            CustomListNode temp = currNode.next;
             currNode.next = pre;
             pre = currNode;
             currNode = temp;
@@ -62,10 +62,10 @@ public class ReverseKLinkList {
     }
 
 
-    public ListNode solve(ListNode head, int left, int right) {
-        ListNode currNode = head;
-        ListNode leftPre = null;
-        ListNode rightNext = null;
+    public CustomListNode solve(CustomListNode head, int left, int right) {
+        CustomListNode currNode = head;
+        CustomListNode leftPre = null;
+        CustomListNode rightNext = null;
         int len = 0;
 
         while (currNode != null) {
@@ -81,14 +81,14 @@ public class ReverseKLinkList {
             currNode = leftPre.next;
         }
 
-        Stack<ListNode> st = new Stack<>();
+        Stack<CustomListNode> st = new Stack<>();
         while (currNode != rightNext) {
             st.push(currNode);
             currNode = currNode.next;
         }
 
         while (!st.isEmpty()) {
-            ListNode node = st.pop();
+            CustomListNode node = st.pop();
             if (leftPre == null) {
                 head = node;
             } else {

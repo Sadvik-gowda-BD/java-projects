@@ -1,4 +1,4 @@
-package com.it.dsa.algorithms;
+package com.it.dsa.algorithms.kmp_algorith;
 
 import java.util.ArrayList;
 import java.util.List;

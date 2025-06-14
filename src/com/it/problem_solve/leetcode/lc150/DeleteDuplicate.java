@@ -1,24 +1,24 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.dsa.datastrucuture.linkedlist.ListNode;
+import com.it.dsa.datastrucuture.linkedlist.CustomListNode;
 
 public class DeleteDuplicate {
 
     public static void main(String[] args) {
 
-        ListNode l1 = new ListNode(1);
-        ListNode l2 = new ListNode(2);
-        ListNode l3 = new ListNode(3);
-        ListNode l4 = new ListNode(4);
-        ListNode l5 = new ListNode(4);
+        CustomListNode l1 = new CustomListNode(1);
+        CustomListNode l2 = new CustomListNode(2);
+        CustomListNode l3 = new CustomListNode(3);
+        CustomListNode l4 = new CustomListNode(4);
+        CustomListNode l5 = new CustomListNode(4);
         l1.next = l2;
         l2.next = l3;
         l3.next = l4;
         l4.next = l5;
 
-        ListNode res = solve(l1);
+        CustomListNode res = solve(l1);
 
-        ListNode cn = res;
+        CustomListNode cn = res;
         while (cn != null) {
             System.out.println(cn.val);
             cn = cn.next;
@@ -26,10 +26,10 @@ public class DeleteDuplicate {
 
     }
 
-    public static ListNode solve(ListNode head) {
-        ListNode dummy = new ListNode(-1000);
-        ListNode d1 = dummy;
-        ListNode cur = head;
+    public static CustomListNode solve(CustomListNode head) {
+        CustomListNode dummy = new CustomListNode(-1000);
+        CustomListNode d1 = dummy;
+        CustomListNode cur = head;
 
         boolean isDup = false;
         while (cur != null) {

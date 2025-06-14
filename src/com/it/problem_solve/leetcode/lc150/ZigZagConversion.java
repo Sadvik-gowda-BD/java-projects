@@ -1,10 +1,9 @@
 package com.it.problem_solve.leetcode.lc150;
 
-import com.it.problem_solve.util.PrintArray;
-
 import java.util.ArrayList;
 import java.util.List;
 
+//6. Zigzag Conversion
 public class ZigZagConversion {
 
     public static void main(String[] args) {
@@ -18,35 +17,36 @@ public class ZigZagConversion {
         System.out.println(solve(s, numRows)); //PINALSIGYAHRPI
         System.out.println(solve(s2, r2)); //PAHNAPLSIIGYIR
 
+        System.out.println(solve2(s, numRows));
+
     }
 
     //Simple code, easy to understand
-    public String convert(String s, int numRows) {
-        if (numRows == 1 || numRows >= s.length()) {
-            return s;
-        }
-
-        int idx = 0, d = 1;
-        List<Character>[] rows = new ArrayList[numRows];
+    public static String solve2(String s, int numRows) {
+        if (numRows <= 1 || s.length() <= numRows) return s;
+        StringBuilder[] rows = new StringBuilder[numRows];
         for (int i = 0; i < numRows; i++) {
-            rows[i] = new ArrayList<>();
+            rows[i] = new StringBuilder();
         }
 
-        for (char c : s.toCharArray()) {
-            rows[idx].add(c);
-            if (idx == 0) {
-                d = 1;
-            } else if (idx == numRows - 1) {
-                d = -1;
+        boolean isMoveUpToDown = false;
+        int index = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            rows[index].append(ch);
+
+            if (index == 0 || index == numRows - 1) isMoveUpToDown = !isMoveUpToDown;
+
+            if (isMoveUpToDown) {
+                index++;
+            } else {
+                index--;
             }
-            idx += d;
         }
 
         StringBuilder result = new StringBuilder();
-        for (List<Character> row : rows) {
-            for (char c : row) {
-                result.append(c);
-            }
+        for (StringBuilder sb : rows) {
+            result.append(sb);
         }
 
         return result.toString();

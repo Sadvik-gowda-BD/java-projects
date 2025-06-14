@@ -1,0 +1,35 @@
+
+Binary search
+
+It works by repeatedly dividing the search interval in half.
+Time complexity of O(log n).
+
+Binary search can be appplied on problems like:
+	sorted array
+	minimum and maximum range/bound
+
+Find mid overflow case
+   int mid=(low+high)/2 - can lead to overflow if low=50 and high=INTEGER_MAX, low+high value is beyond int range
+   Solution
+    1)use - long mid
+    2)int mid = low+(high-low)/2
+
+
+✅ Use while (left <= right) when:
+	You're searching for an exact value (like a classic binary search).
+	You usually return immediately when you find the element (arr[mid] == target).
+	You move left = mid + 1 and right = mid - 1 to shrink the window.
+	Ending Condition: left > right
+	If you are not sure about the expected answer & ans depend on range, then use ans variable and update ans=mid on possible side.
+
+
+Questions
+	1. Search in Rotated Sorted Array
+	2. Finding First or Last Occurrence (Bound Problems)
+	3. Peak Element (Unimodal Array)
+	4. Binary Search on the Answer
+		Minimum capacity to ship packages in D days
+		Allocate minimum number of pages (book allocation). minPossibleAns= max(pages array) maxPossibleAns= sum(pages array)
+		Aggressive cows (maximize minimum distance).
+		Koko eating bananas.
+	5. Search Space Reduction in Optimization

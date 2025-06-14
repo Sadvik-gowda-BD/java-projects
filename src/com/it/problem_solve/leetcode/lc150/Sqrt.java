@@ -6,19 +6,15 @@ public class Sqrt {
 
     public static void main(String[] args) {
 
-        int a = 46340 * 46340;
-//        System.out.println(a);
-//        System.out.println(Integer.MAX_VALUE);
-        //System.out.println(bruteFore(2147483647));
-//        System.out.println(solveByBinarySearch(2147483647));
-//        System.out.println(solveByBinarySearch(1));
-//        System.out.println(solveByBinarySearch(4));
-        System.out.println(solveByBinarySearch(8));
+        System.out.println(solveByBinarySearch2(5));
+
+//        System.out.println(solveByBinarySearch(8));
     }
 
     public static int solveByBinarySearch(int x) {
         int l = 1;
         int h = (x / 2) + 1;
+        int ans = 0;
 
         while (l <= h) {
             int mid = (l + h) / 2;
@@ -27,12 +23,35 @@ public class Sqrt {
             if (val == x) {
                 return mid;
             } else if (val < x) {
+                ans = mid;
                 l = mid + 1;
             } else {
                 h = mid - 1;
             }
         }
-        return h; //When the loop ends, hi contains the largest integer whose square is ≤ x, so we return hi instead of -1.
+        return ans;
+    }
+
+    public static int solveByBinarySearch2(int x) {
+        int l = 1;
+        int h = (x / 2) + 1;
+        int ans = 0;
+
+        while (l < h) {
+            int mid = (l + h) / 2;
+            long val = (long) mid * mid;
+
+            System.out.println("l:" + l + " h:" + h + " mid:" + mid);
+
+            if (val == x) {
+                return mid;
+            } else if (val < x) {
+                l = mid;
+            } else {
+                h = mid - 1;
+            }
+        }
+        return l;
     }
 
     public static int bruteFore(int x) {
