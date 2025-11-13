@@ -2,11 +2,15 @@ package com.demo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
+import java.util.Stack;
 
 public class Test1 {
 
@@ -14,43 +18,62 @@ public class Test1 {
 
     public static void main(String[] args) {
 
-        int[][] mat = {{1, 2, 3,}, {4, 5, 6}, {7, 8, 9}};
-
-        System.out.println(solve(mat,0,0,2));
-
-
+        System.out.println(solve("vzhofnpo"));
+//        System.out.println(solve("bdda"));
     }
 
 
-    private static int solve(int[][] mat, int r, int j1, int j2) {
+    //"vzhofnpo" -- f   vzh0
+    //"fnohopzv" "fnopohzv"
+    public static String solve(String s1) {
 
-        System.out.println("R:" + r + " j1:" + j1 + " j2:" + j2);
+        StringBuilder sb = new StringBuilder();
 
-        if (j1 < 0 || j1 >= mat.length || j2 < 0 || j2 >= mat.length) return Integer.MIN_VALUE;
+        int ind = 0;
+        Stack<Character> st = new Stack<>();
 
-        if (r == mat.length - 1) {
-            if (j1 == j2) {
-                return mat[r][j1];
-            } else {
-                return mat[r][j1] + mat[r][j2];
+        while (ind < s1.length()) {
+            char currCh = s1.charAt(ind);
+            ind++;
+            int minChar = hasMinCar(s1, ind);
+            if (minChar == Integer.MAX_VALUE ) {
+                st.add(currCh);
+                continue;
+            }else {
+                if(!st.isEmpty() && st.peek() != minChar){
+                    st.add(currCh);
+                    continue;
+                }
             }
-        }
 
-        int max = 0;
-        for (int d1 = -1; d1 <= 1; d1++) {
-            for (int d2 = -1; d2 <= 1; d2++) {
-                int val = solve(mat, r + 1, j1 + d1, j2 + d2);
-                max = Math.max(max, val);
+            while (!st.isEmpty()) {
+                char ch = st.peek();
+                if (ch <= currCh) {
+                    sb.append(st.pop());
+                } else {
+                    break;
+                }
             }
+
+            sb.append(currCh);
         }
 
-        if (j1 == j2) {
-            return mat[r][j1] + max;
-        } else {
-            return mat[r][j1] + mat[r][j2] + max;
+        while (!st.isEmpty()){
+            sb.append(st.pop());
         }
 
+        return sb.toString();
     }
 
+    private static int hasMinCar(String s, int ind) {
+        char currCh = s.charAt(ind-1);
+
+        for (int i = ind; i < s.length(); i++) {
+            if (s.charAt(i) < currCh) {
+                return s.charAt(i);
+            }
+        }
+        return Integer.MAX_VALUE;
+    }
 
 }
