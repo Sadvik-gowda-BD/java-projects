@@ -8,8 +8,9 @@ public class MainClass {
         SomeClass someClass = new SomeClass();
 
         someClass = null; //Making reference null, so above object will be ready for garbage collection.
-        Thread.sleep(100); // Giving some time for garbage collector to clean the unreferenced object
         System.gc();
+        Thread.sleep(1000); // Giving some time for garbage collector to clean the unreferenced object
+
 
         System.out.println("Application ended");
     }

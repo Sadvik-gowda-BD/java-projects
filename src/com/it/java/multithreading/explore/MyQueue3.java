@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /*
-Here different threads can access MyQueue methods.
+Here different threads can access MyQueue methods at same time.
 Possible to access two method at a same time by different threads.
 For example T1 can access add() and T2 can access remove() method at same time. Because both method uses different object
 in synchronized block.

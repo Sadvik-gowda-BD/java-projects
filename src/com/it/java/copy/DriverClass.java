@@ -27,5 +27,9 @@ public class DriverClass {
         deepCopy1.arr[0] = 99;
         System.out.println("After:"+Arrays.toString(arr1));
 
+        //Clone not support
+//        Normal n = new Normal();
+//        n.clone;
+
     }
 }

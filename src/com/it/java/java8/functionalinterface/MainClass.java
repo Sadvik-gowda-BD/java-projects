@@ -12,7 +12,7 @@ public class MainClass {
         StudentDto student1 = new StudentDto(101, "Virat", 27);
         StudentDto student2 = new StudentDto(102, "Nikki", 20);
 
-        AgeFilter ageFilter = new AgeFilter() {
+        AgeFilter<StudentDto> ageFilter = new AgeFilter<>() {
             @Override
             public boolean ageFilter(StudentDto student) {
                 return student.getAge() > 20;
@@ -23,7 +23,7 @@ public class MainClass {
         System.out.println("Student2:" + ageFilter.ageFilter(student2));
 
         //lambda
-        AgeFilter ageFilterLambda = (student) -> {
+        AgeFilter<StudentDto> ageFilterLambda = (student) -> {
             return student.getAge() > 20;
         };
         System.out.println("By using Lambda");

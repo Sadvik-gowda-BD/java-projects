@@ -17,7 +17,7 @@ public class TestSerializable implements Serializable {
 
     int id;
     String name;
-    transient String pwd;
+    transient String pwd; //The transient keyword in Java is used to indicate that a field should not be serialized
 
     @Override
     public String toString() {

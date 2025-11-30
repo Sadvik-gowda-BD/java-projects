@@ -25,8 +25,17 @@ class ParkingLot {
     }
 
     public void vehicleExit(VehicleType type) {
-        vehicleCount.get(type).decrementAndGet();
-        System.out.println(type + " exited. Current count: " + vehicleCount.get(type).get());
+        if (vehicleCount.get(type).intValue() <= 0) {
+            System.out.println("Nothing to exit " + type);
+            return;
+        }
+        synchronized (this) {
+            if (vehicleCount.get(type).intValue() > 0) {
+                int val = vehicleCount.get(type).decrementAndGet();
+                System.out.println(type + " exited. Current count: " + val);
+            }
+        }
+
     }
 
     public void displayCurrentCount() {

@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /*
-Here only one thread can access MyQueue methods because synchronize lock by same object obj1.
+Here only one thread can access MyQueue methods at same time because synchronize lock by same object obj1.
 Not possible access two method at a same time even by different threads.
 For example T1 access add() and T2 access remove() method is not possible. If T1 block add() method then T2 has to
 wait until T1 to unlock/complete.

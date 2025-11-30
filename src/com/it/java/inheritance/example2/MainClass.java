@@ -1,4 +1,4 @@
-package com.it.java.inheretence;
+package com.it.java.inheritance.example2;
 
 import com.demo.TestClass;
 
@@ -31,7 +31,7 @@ public class MainClass{
         Labrador labrador = new Labrador();
         print(labrador); //DOG
         /*
-        If print(Labrador labrador) exist then output is LABRADOR
+        If method print(Labrador labrador) exist then output is LABRADOR
         If print(Labrador labrador) not exist then output is DOG
         If print(Labrador labrador) and print(Dog dog) not exist then output is ANIMAL
          */

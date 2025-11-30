@@ -24,7 +24,7 @@ class MyResource implements AutoCloseable{
 
     @Override
     public void close() throws Exception {
-        System.out.println("Automatically closing resource");
+        System.out.println("Automatically closing resource. By using close method");
     }
 }
 

@@ -2,7 +2,8 @@ package com.it.java.java8.functionalinterface;
 
 import com.it.java.dto.StudentDto;
 
-public interface AgeFilter {
+//Same as Predicate
+public interface AgeFilter<T> {
 
-    boolean ageFilter(StudentDto student);
+    boolean ageFilter(T t);
 }

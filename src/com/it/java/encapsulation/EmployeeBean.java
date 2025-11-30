@@ -2,8 +2,7 @@ package com.it.java.encapsulation;
 
 import java.io.Serializable;
 
-public class EmployeeBean implements Serializable
-{
+public class EmployeeBean implements Serializable {
 
     private String name;
     private double salary;

@@ -17,7 +17,6 @@ public class DriverClass {
         System.out.println("equals:" + s1.equals(s2));
 
         System.out.println("s1_hashcode: " + s1.hashCode());
-        System.out.println("s1_hashcode: " + s1.hashCode());
         System.out.println("s2_hashcode: " + s2.hashCode());
         System.out.println("s3_hashcode: " + s3.hashCode());
 

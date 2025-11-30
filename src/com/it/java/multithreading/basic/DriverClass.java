@@ -9,7 +9,7 @@ public class DriverClass {
         thread1.start();
         thread1.setName("UsingThreadClass-1");
         System.out.println(thread1.getState());
-        // thread1.start(); it will cause error IllegalThreadStateException
+        // thread1.start(); starting same thread will cause error IllegalThreadStateException
         //thread1.run(); it not make any sense, the execution will happen in same thread. Just normal method call
 
         for (int i = 0; i < 10; i++) {
