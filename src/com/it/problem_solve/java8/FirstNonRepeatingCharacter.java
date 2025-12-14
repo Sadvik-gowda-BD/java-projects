@@ -27,6 +27,7 @@ public class FirstNonRepeatingCharacter {
         Map<Character, Long> characterCount = input.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(c -> c, LinkedHashMap::new, Collectors.counting()));
+        //or () -> new LinkedList<>() as a supplier
 
         // Find the first character with a count of 1
         return characterCount.entrySet().stream()
