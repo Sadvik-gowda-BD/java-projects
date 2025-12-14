@@ -2,6 +2,11 @@ package com.it.dsa.algorithms.sort;
 
 import java.util.Arrays;
 
+/*
+Avg Time: O(n log n)
+Worst Time: O(n²) (bad pivot)
+Space: O(log n) (recursion stack)
+ */
 public class QuickSort {
 
     public static void main(String[] args) {

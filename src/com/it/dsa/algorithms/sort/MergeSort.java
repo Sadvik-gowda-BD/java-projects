@@ -2,6 +2,11 @@ package com.it.dsa.algorithms.sort;
 
 import java.util.Arrays;
 
+/*
+    Time: O(n log n) (best/avg/worst)
+    Space: O(n)
+    It's preferred for linked lists
+ */
 public class MergeSort {
 
     public static void main(String[] args) {
