@@ -6,6 +6,7 @@ import java.util.Arrays;
     Time: O(n log n) (best/avg/worst)
     Space: O(n)
     It's preferred for linked lists
+    Divide & conquer
  */
 public class MergeSort {
 

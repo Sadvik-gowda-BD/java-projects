@@ -21,3 +21,5 @@ Palindrome
 
 2)Different Paces
 Find the middle of a linked list
+Is the linklist contains cycle
+Find start point of the cycle

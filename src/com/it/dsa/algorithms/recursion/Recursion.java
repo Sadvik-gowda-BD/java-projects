@@ -60,8 +60,10 @@ public class Recursion {
     space complexity: O(1)
     TC: O(n)
      */
+    // factTailRecursion(5,1);
     private static int factTailRecursion(int n, int ans) {
         if (n == 0 || n == 1) {
+            System.out.println("---------- " + ans); //120
             return ans;
         }
         return factTailRecursion(n - 1, n * ans);
