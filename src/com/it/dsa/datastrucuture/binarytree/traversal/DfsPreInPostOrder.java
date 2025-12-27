@@ -7,8 +7,8 @@ import java.util.Stack;
 
 /*
     One Rule to Remember:
-        Inorder → Use when BST is involved.
         Preorder → Use when you need root first.
+        Inorder → Use when BST is involved.
         Postorder → Use when you need bottom-up computation.
  */
 public class DfsPreInPostOrder {

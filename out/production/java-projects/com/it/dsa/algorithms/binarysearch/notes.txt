@@ -4,7 +4,7 @@ Binary search
 It works by repeatedly dividing the search interval in half.
 Time complexity of O(log n).
 
-Binary search can be appplied on problems like:
+Binary search can be applied on problems like:
 	sorted array
 	minimum and maximum range/bound
 
@@ -15,13 +15,12 @@ Find mid overflow case
     2)int mid = low+(high-low)/2
 
 
-✅ Use while (left <= right) when:
+✅ Use while (left <= right) [Ending Condition: left > right] when:
 	You're searching for an exact value (like a classic binary search).
 	You usually return immediately when you find the element (arr[mid] == target).
 	You move left = mid + 1 and right = mid - 1 to shrink the window.
-	Ending Condition: left > right
-	If you are not sure about the expected answer & ans depend on range, then use ans variable and update ans=mid on possible side.
 
+	If you are not sure about the expected answer & ans depend on range, then use ans variable and update ans=mid on possible side.
 
 Questions
 	1. Search in Rotated Sorted Array

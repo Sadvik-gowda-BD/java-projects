@@ -2,6 +2,9 @@ package com.it.dsa.algorithms.binarysearch;
 
 import java.util.Arrays;
 
+/*
+34. Find First and Last Position of Element in Sorted Array
+ */
 public class FirstAndLastPosOfEle {
 
     public static void main(String[] args) {

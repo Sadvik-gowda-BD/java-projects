@@ -11,20 +11,7 @@ public class CustomBinaryTree {
         }
     }
 
-    private TreeNode insert(TreeNode node, int data) {
-        if(node == null){
-            return new TreeNode(data);
-        }
-
-        if (data < node.val) {
-            insert(node.left, data);
-        } else {
-            insert(node.right, data);
-        }
-        return node;
-    }
-
-
+    //refer DFS class for more info
     /*root left right
         Node n1 = new Node(2);
         Node n1 = new Node(3);
@@ -42,6 +29,7 @@ public class CustomBinaryTree {
 
 
     /*
+        left, root right
         The left subtree is traversed first
         Then the root node for that subtree is traversed
         Finally, the right subtree is traversed
@@ -60,6 +48,7 @@ public class CustomBinaryTree {
     }
 
     /*
+    left, right, root
     The left subtree is traversed first
     Then the right subtree is traversed
     Finally, the root node of the subtree is traversed
