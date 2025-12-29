@@ -1,0 +1,6 @@
+
+
+1)To solve some kind of problems, we have to maintain some states.
+-> Ex To find top view of binary tree we have to maintain some states.
+    -> If we use BFS - queue<{node, horizontalDistance}> . so the first horizontalDistance is the outermost node
+    ->If we use DFS -Map<Integer, {node, level}>. lowest level horizontalDistance is the outermost node
