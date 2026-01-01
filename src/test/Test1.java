@@ -1,70 +1,42 @@
 package test;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Test1 {
 
     public static void main(String[] args) {
 
+        List<Integer> ls = List.of(1, 2, 3);
 
-        int[] arr = new int[]{10,5, 2, 1, -7,6, 8, 3, -2};
+        List<Integer> temp = new ArrayList<>();
+        rec(ls, temp, 0, 2);
+//        System.out.println(temp);
 
-        int[] res = sort(arr);
-        System.out.println(Arrays.toString(res));
+    }
+
+    /*
+
+Ex: For array {1, 2, 3} possible size K=2 combination are:
+[1, 2], [1, 3], [2, 3]
+
+pair (1,2) != (2,1)
+
+                */
+    private static void rec(List<Integer> ls, List<Integer> sub, int ind, int k) {
+
+        if (sub.size() == k) {
+            System.out.println(sub);
+            return;
+        }
+        if (ind >= ls.size()) return;
+
+        sub.add(ls.get(ind));
+        rec(ls, sub, ind + 1, k);
+        sub.removeLast();
+        rec(ls, sub, ind + 1, k);
+
     }
 
 
-    public static int[] sort(int[] arr) {
-
-        if (arr.length <= 1) return arr;
-
-        int l = 0, r = arr.length - 1;
-        int mid = (r - l) / 2;
-        int[] lArr = new int[mid - l + 1];
-        int[] rArr = new int[r - mid];
-
-        for (int i = 0; i <= mid; i++) {
-            lArr[i] = arr[i];
-        }
-        for (int i = mid + 1; i <= r; i++) {
-            rArr[i - mid - 1] = arr[i];
-        }
-
-        int[] sortedLArr = sort(lArr);
-        int[] sortedRArr = sort(rArr);
-        return merge(sortedLArr, sortedRArr);
-    }
-
-    public static int[] merge(int[] arr1, int[] arr2) {
-
-        int l1 = 0, r1 = 0, i = 0;
-
-        int[] newArr = new int[arr1.length + arr2.length];
-
-        while (l1 < arr1.length && r1 < arr2.length) {
-
-            if (arr1[l1] < arr2[r1]) {
-                newArr[i] = arr1[l1];
-                l1++;
-            } else {
-                newArr[i] = arr2[r1];
-                r1++;
-            }
-            i++;
-        }
-
-        while (l1 < arr1.length) {
-            newArr[i] = arr1[l1];
-            l1++;
-            i++;
-        }
-
-        while (r1 < arr2.length) {
-            newArr[i] = arr2[r1];
-            r1++;
-            i++;
-        }
-
-        return newArr;
-    }
 }

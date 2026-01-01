@@ -1,0 +1,12 @@
+
+
+DFS Topological sort
+     It helps to sort the nodes (u-->v). u comes first then v.
+
+Kahn's Algorithm (BFS-based topological sort)
+    It helps to sort the nodes (u-->v). It uses Indegree
+    The idea is to use Kahn’s algorithm because it works only for Directed Acyclic Graphs (DAGs). So, while performing topological sorting using Kahn’s algorithm, if we are able to include all the vertices in the topological order, it means the graph has no cycle and is a DAG.
+    However, if at the end there are still some vertices left (i.e., their in-degree never becomes 0), it means those vertices are part of a cycle. Hence, if we cannot get all the vertices in the topological sort, the graph must contain at least one cycle.
+
+Union-Find (Disjoint Set Union) (DSU)
+    Helps to find cycle in undirected graph

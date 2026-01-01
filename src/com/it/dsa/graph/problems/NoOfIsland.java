@@ -27,10 +27,10 @@ public class NoOfIsland {
 
     private static int solve(int[][] mat) {
 
-        boolean[][] visited = new boolean[mat.length][mat[0].length];
-
         int row = mat.length;
         int col = mat[0].length;
+
+        boolean[][] visited = new boolean[row][col];
 
         int island = 0;
         int rowLen = mat.length;
@@ -55,9 +55,6 @@ public class NoOfIsland {
 
         visited[i][j] = true;
 
-        if (mat[i][j] == 1) {
-            //visited[i][j] = true;
-
             traverseDFS(mat, visited, i - 1, j, rowLen, colLen);
             traverseDFS(mat, visited, i + 1, j, rowLen, colLen);
             traverseDFS(mat, visited, i, j - 1, rowLen, colLen);
@@ -68,7 +65,6 @@ public class NoOfIsland {
 //            traverseDFS(mat, visited, i - 1, j + 1, rowLen, colLen);
 //            traverseDFS(mat, visited, i + 1, j + 1, rowLen, colLen);
 //            traverseDFS(mat, visited, i + 1, j + 1, rowLen, colLen);
-        }
 
     }
 

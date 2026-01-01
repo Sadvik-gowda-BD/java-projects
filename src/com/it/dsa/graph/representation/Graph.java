@@ -85,4 +85,48 @@ public class Graph {
         }
 
     }
+
+    /*
+    Representation of Wighted graph on Adjacent list.
+    List<List<Pair>> adj; //better to use
+    or List<List<int[]>> adj;   // int[]{to, weight}
+    or use Map
+     */
+    private static void representWeightedDirectedGraph() {
+
+        int V = 4;
+
+        List<List<iPair>> adjListWithPairObj = new ArrayList<>(); //List<List<Pair>> adj; //better to use
+        List<List<int[]>> adjListWithArr = new ArrayList<>(); //List<List<int[]>> adj;   // int[]{to, weight}
+
+        for (int i = 0; i < V; i++) {
+            adjListWithPairObj = new ArrayList<>();
+            adjListWithArr = new ArrayList<>();
+        }
+
+        addWeightedEdgesPair(0, 1, 3, adjListWithPairObj); // 0 ---3---> 1
+        addWeightedEdgesPair(0, 2, 4, adjListWithPairObj); // 0 ---4---> 2
+
+        addWeightedEdgesArr(0, 1, 3, adjListWithArr);
+        addWeightedEdgesArr(0, 2, 4, adjListWithArr);
+    }
+
+    private static void addWeightedEdgesPair(int u, int v, int weight, List<List<iPair>> list) {
+        list.get(u).add(new iPair(v, weight));
+    }
+
+    private static void addWeightedEdgesArr(int u, int v, int weight, List<List<int[]>> list) {
+        list.get(u).add(new int[]{v, weight});
+    }
+
+
+    private static class iPair {
+        int to;
+        int weight;
+
+        public iPair(int to, int weight) {
+            this.to = to;
+            this.weight = weight;
+        }
+    }
 }

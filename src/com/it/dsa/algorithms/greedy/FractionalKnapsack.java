@@ -3,7 +3,7 @@ package com.it.dsa.algorithms.greedy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Knapsack {
+public class FractionalKnapsack {
 
     public static void main(String[] args) {
 
@@ -31,23 +31,23 @@ public class Knapsack {
             return -1;
         });
 
-        int tw = 0;
+        int totalWeight = 0;
         float tp = 0;
 
         for (Obj ob : ls) {
 
-            if (tw == thresholdWt) {
+            if (totalWeight == thresholdWt) {
                 break;
             }
-            int rem = thresholdWt - tw;
+            int rem = thresholdWt - totalWeight;
 
             if (ob.weight <= rem) {
-                tw += ob.weight;
+                totalWeight += ob.weight;
                 tp += ob.profit;
             } else {
                 float perKg = ob.profit / (float) ob.weight;
                 tp += (perKg * rem);
-                tw += rem;
+                totalWeight += rem;
             }
         }
         System.out.println("Profit: " + tp);
