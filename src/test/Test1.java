@@ -1,42 +1,56 @@
 package test;
 
+import com.it.problem_solve.leetcode.ListNode;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class Test1 {
 
     public static void main(String[] args) {
 
-        List<Integer> ls = List.of(1, 2, 3);
+        ArrayList<Integer> l1 = new ArrayList<>(Arrays.asList(2, 2, 1, 2, 2, 2));
+        ArrayList<Integer> l2 = new ArrayList<>(Arrays.asList(1, 2, 2, 2, 1, 2));
 
-        List<Integer> temp = new ArrayList<>();
-        rec(ls, temp, 0, 2);
-//        System.out.println(temp);
+
+        ArrayList<ArrayList<Integer>> arr = new ArrayList<>(Arrays.asList(l1, l2));
+
+        return;
 
     }
 
-    /*
+    private static ListNode solveByRec(ListNode root) {
+        if (root == null) return null;
 
-Ex: For array {1, 2, 3} possible size K=2 combination are:
-[1, 2], [1, 3], [2, 3]
+        ListNode newRoot = rec(root, root.next);
+        root.next = null;
+        return newRoot;
+    }
 
-pair (1,2) != (2,1)
+    private static ListNode rec(ListNode one, ListNode two) {
+        if (two == null) return one;
 
-                */
-    private static void rec(List<Integer> ls, List<Integer> sub, int ind, int k) {
+        ListNode root = rec(one.next, two.next);
+        two.next = one;
+        return root;
+    }
 
-        if (sub.size() == k) {
-            System.out.println(sub);
-            return;
+    private static ListNode solve2(ListNode root) {
+
+        if (root == null) return null;
+
+        ListNode curr = root;
+        ListNode pre = null;
+        ListNode temp;
+        while (curr != null) {
+            temp = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = temp;
         }
-        if (ind >= ls.size()) return;
-
-        sub.add(ls.get(ind));
-        rec(ls, sub, ind + 1, k);
-        sub.removeLast();
-        rec(ls, sub, ind + 1, k);
-
+        return pre;
     }
-
-
 }
+

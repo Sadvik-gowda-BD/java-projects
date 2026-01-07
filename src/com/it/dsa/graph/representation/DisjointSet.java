@@ -3,6 +3,21 @@ package com.it.dsa.graph.representation;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+It mostly used in dynamic graph(Graph which change frequently).
+
+DSU by Rank and Size have same TC. DSU by Size is easy.
+
+Union–Find supports two main operations: Union & Find
+
+1️⃣ Find
+Determines which set an element belongs to
+Returns the representative (root/parent) of that set
+
+2️⃣ Union
+Merges two sets into one
+Done by connecting the roots of the two sets
+ */
 public class DisjointSet {
 
     public List<Integer> parent = new ArrayList<>();
@@ -18,6 +33,7 @@ public class DisjointSet {
         }
     }
 
+    //It find the parent along with Path compression. Compress path by pointing to 1 parent
     public int findParent(int node) {
         if (parent.get(node) == node) {
             return node;
@@ -25,7 +41,7 @@ public class DisjointSet {
 
         int ultiParent = findParent(parent.get(node));
         parent.set(node, ultiParent);
-        return parent.get(node);
+        return ultiParent;
     }
 
     public void unionBySize(int u, int v) {
@@ -38,6 +54,7 @@ public class DisjointSet {
             return;
         }
 
+        //Always attach the smaller tree under the larger tree
         if (size.get(parentU) < size.get(parentV)) {
             //attach parentU to parentV and increase the size of parentV
             parent.set(parentU, parentV);

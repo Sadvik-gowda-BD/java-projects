@@ -88,7 +88,7 @@ public class DijkstraAlgorithm {
 
 
     private static class iPair {
-        int node;
+        int node; // For adjacent list this field act as to/destination node. For priority queue it acts as state node
         int weight;
 
         public iPair(int node, int weight) {

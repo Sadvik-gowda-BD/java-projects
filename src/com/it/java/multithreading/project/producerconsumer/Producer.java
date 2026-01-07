@@ -12,7 +12,7 @@ public class Producer implements Runnable{
     public void run() {
         for (int i = 0; i < 30; i++) {
             myQueue.add(i);
-            //Add thread.sleep(1000) to see difference.
+            //Add Thread.sleep(1000) to see difference.
         }
     }
 }
