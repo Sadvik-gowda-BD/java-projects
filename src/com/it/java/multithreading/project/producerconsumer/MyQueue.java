@@ -22,6 +22,11 @@ public class MyQueue {
 
     public boolean add(int val) {
         //Use any object this, queue or any
+        /*
+            Entering synchronized → monitor lock is automatically acquired
+            Exiting the block (normally or via exception) → monitor lock is automatically released
+            else we have to use locker.lock() and unlock
+         */
         synchronized (lock) {
             while (queue.size() == maxSize) {
                 try {
@@ -39,7 +44,7 @@ public class MyQueue {
                  queue.size() == maxSize. If the queue is still full, the thread waits again.
                      */
                     System.out.println("add method is waiting");
-                    lock.wait(); // THREAD Releases lock and goes to WAITING state
+                    lock.wait(); // THREAD Releases lock and goes to WAITING state. When another thread calls notify() / notifyAll(), It only marks waiting threads as BLOCKED (ready to run).The waiting thread must re-acquire the same monitor lock before it continues.
 
                     // THREAD CONTINUES from this line AFTER wake-up or after re-acquiring the lock.
 
