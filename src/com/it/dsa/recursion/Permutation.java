@@ -26,9 +26,9 @@ public class Permutation {
         System.out.println("Permutation by using visit array and backtrack");
         permutation(arr, new HashSet<>(), new ArrayList<>());
 
-        System.out.println("Permutation by swapping abd backtrack without any extra space");
-        int[] arr2 = {1, 2, 3};
-        permutationBySwapping(arr2, 0);
+//        System.out.println("Permutation by swapping abd backtrack without any extra space");
+//        int[] arr2 = {1, 2, 3};
+//        permutationBySwapping(arr2, 0);
 
         System.out.println("-------permutationWithDuplicate-------------");
         permutationWithDuplicate(arr);
@@ -52,7 +52,7 @@ public class Permutation {
                 used.add(arr[i]);
                 permutation(arr, used, currList);
                 used.remove(arr[i]);
-                currList.remove(currList.size() - 1);
+                currList.removeLast();
             }
         }
     }
@@ -105,7 +105,7 @@ public class Permutation {
             currList.add(arr[i]);
             used[i] = true;
             permutationWithDuplicate(arr, used, currList);
-            currList.remove(currList.size() - 1);
+            currList.removeLast();
             used[i] = false;
         }
     }
