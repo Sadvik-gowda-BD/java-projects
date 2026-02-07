@@ -1,12 +1,7 @@
-package test;
+package com.it.problem_solve.leetcode.others;
 
-import com.it.problem_solve.leetcode.ListNode;
-
-import java.util.Arrays;
-import java.util.PriorityQueue;
-import java.util.Stack;
-
-public class Test2 {
+//79. Word Search
+public class WordSearch {
 
     public static void main(String[] args) {
 
@@ -55,6 +50,5 @@ public class Test2 {
     private static boolean isValidCord(char[][] arr, int i, int j) {
         return i >= 0 && j >= 0 && i < arr.length && j < arr[0].length;
     }
-
 
 }

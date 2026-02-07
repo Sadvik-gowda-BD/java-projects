@@ -15,67 +15,38 @@ public class Test1 {
 
     public static void main(String[] args) {
 
+        int[] res = solve(new int[]{-10});
 
-        int n = 4;
-        int[][] edges = new int[][]{{0, 1, 3}, {3, 1, 1}, {2, 3, 4}, {0, 2, 2}};
-
-        System.out.println(minCost(n, edges));
+        System.out.println(Arrays.toString(res));
     }
 
-    //edges u v weight
-    public static int minCost(int n, int[][] edges) {
+    //0 1 2 3 4  len=5
+    private static int[] solve(int[] nums) {
+        int len = nums.length;
+        int[] res = new int[len];
 
+        for (int i = 0; i < len; i++) {
+            if (nums[i] == 0) {
+                res[i] = 0;
+            } else if (nums[i] > 0) {
+                int rem = (nums[i] + i) % len;
+                res[i] = nums[rem];
+            } else {
+                int val = Math.abs(nums[i]);
+                if (val <= i) {
+                    res[i] = nums[i-val];
+                } else {
+                    int rem = (val - i) % len;
+                    if(rem ==0 ){
+                        res[i] = nums[rem];
+                    }else {
+                        res[i] = nums[len - rem];
+                    }
 
-        List<List<Pair>> adjList = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            adjList.add(new ArrayList<>());
-        }
-        int[] distArr = new int[n];
-        Arrays.fill(distArr, Integer.MAX_VALUE);
-
-
-        for (int[] edge : edges) {
-            int u = edge[0];
-            int v = edge[1];
-            int wt = edge[2];
-            adjList.get(u).add(new Pair(v, wt));
-            adjList.get(v).add(new Pair(u, 2 * wt));
-        }
-
-        Pair sourceNode = new Pair(0, 0);
-
-        PriorityQueue<Pair> pq = new PriorityQueue<>((p1, p2) -> p1.weight - p2.weight);
-        pq.add(sourceNode);
-        distArr[0] = 0;
-
-        while (!pq.isEmpty()) {
-            Pair currPair = pq.poll();
-
-            List<Pair> neighNodes = adjList.get(currPair.v);
-
-            for (Pair neighNode : neighNodes) {
-                int newDistance = currPair.weight + neighNode.weight;
-                if (newDistance < distArr[neighNode.v]) {
-                    distArr[neighNode.v] = newDistance;
-                    pq.add(new Pair(neighNode.v, newDistance));
                 }
             }
         }
-
-        System.out.println(Arrays.toString(distArr));
-
-        return distArr[n - 1] == Integer.MAX_VALUE ? -1 : distArr[n - 1];
-    }
-
-    static class Pair {
-
-        int v;
-        int weight;
-
-        public Pair(int v, int weight) {
-            this.v = v;
-            this.weight = weight;
-        }
+        return res;
     }
 
 
