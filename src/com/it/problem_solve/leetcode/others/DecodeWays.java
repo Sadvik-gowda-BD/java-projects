@@ -1,5 +1,7 @@
 package com.it.problem_solve.leetcode.others;
 
+
+//91. Decode Ways
 public class DecodeWays {
 
     public static void main(String[] args) {
@@ -19,8 +21,8 @@ public class DecodeWays {
         dp[1] = s.charAt(0) == '0' ? 0 : 1;
 
         for (int i = 2; i <= n; i++) {
-            int oneDigit = Integer.valueOf(s.substring(i - 1, i));
-            int twoDigits = Integer.valueOf(s.substring(i - 2, i));
+            int oneDigit = Integer.parseInt(s.substring(i - 1, i));
+            int twoDigits = Integer.parseInt(s.substring(i - 2, i));
 
             if (oneDigit >= 1)
                 dp[i] += dp[i - 1];
