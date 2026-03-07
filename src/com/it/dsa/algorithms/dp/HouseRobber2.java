@@ -5,9 +5,9 @@ public class HouseRobber2 {
 
     public static void main(String[] args) {
 
-        int[] a1 = {2,3,2};
-        int[] a2 = {1,2,3,1};
-        int[] a3 = {1,2,3};
+        int[] a1 = {2, 3, 2};
+        int[] a2 = {1, 2, 3, 1};
+        int[] a3 = {1, 2, 3};
 
 //        System.out.println(solve(a1));
 //        System.out.println(solve(a2));
@@ -19,8 +19,8 @@ public class HouseRobber2 {
         int len = arr.length;
 
         if (len == 0) return 0;
-        if(len == 1) return arr[0];
-        if(len == 2) return  Math.max(arr[0], arr[1]);
+        if (len == 1) return arr[0];
+        if (len == 2) return Math.max(arr[0], arr[1]);
 
 
         int[] dp = new int[len - 1];
@@ -33,14 +33,14 @@ public class HouseRobber2 {
         }
         int val1 = dp[dp.length - 1];
 
-        if(len == 2) return val1;
+        if (len == 2) return val1;
 
         int[] dp2 = new int[len - 1];
 
         dp2[0] = arr[1];
         dp2[1] = Math.max(arr[1], arr[2]);
         for (int i = 3; i < len; i++) {
-            int dpInd = i-1;
+            int dpInd = i - 1;
             dp2[dpInd] = Math.max(dp2[dpInd - 1], arr[i] + dp2[dpInd - 2]);
         }
 

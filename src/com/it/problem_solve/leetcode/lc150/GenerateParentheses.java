@@ -38,4 +38,31 @@ public class GenerateParentheses {
             sb.deleteCharAt(sb.length() - 1);
         }
     }
+
+
+    // ["((()))","(()())","(())()","()(())","()()()"]
+    private static List<String> solve2(int n) {
+        List<String> res = new ArrayList<>();
+        solve2(n, res, 0, new StringBuilder());
+        return res;
+    }
+
+    private static void solve2(int n, List<String> res, int close, StringBuilder sb) {
+        if (n == 0 && close == 0) {
+            res.add(sb.toString());
+            return;
+        }
+
+        if (n > 0) {
+            sb.append('(');
+            solve2(n - 1, res, close + 1, sb);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+
+        if (close > 0) {
+            sb.append(')');
+            solve2(n, res, close - 1, sb);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+    }
 }

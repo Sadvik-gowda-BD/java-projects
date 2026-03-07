@@ -1,89 +1,67 @@
 package test;
 
-import java.util.Arrays;
-
 public class Test2 {
 
 
     public static void main(String[] args) {
 
-        char[][] mat = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
+        int[][] grid = {{0, 0, 1}, {1, 1, 0}, {1, 0, 0}};
 
-        System.out.println(bruteForce(mat));
-        System.out.println(solveByTabulation(mat));
+        System.out.println(solve(grid));
     }
 
-    private static int bruteForce(char[][] mat) {
+    private static int solve(int[][] grid) {
 
-        int res = 0;
+        int len = grid.length;
 
-        for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat[0].length; j++) {
-//                int remainArea = Math.max(mat.length - i, mat[0].length - j);
-//                remainArea *= remainArea;
-//                if (remainArea <= res) {
-//                    return res;
-//                }
-                int val = getMaxSq(mat, i, j);
-                res = Math.max(res, val);
-            }
-        }
+        int[] arr = new int[len];
 
-        return res;
-    }
-
-    private static int getMaxSq(char[][] mat, int i, int j) {
-        int n = 0;
-
-        int delRow = i;
-        int delCol = j;
-        while (delRow < mat.length && delCol < mat[0].length) {
-
-            //vertical check
-            for (int r = i; r <= delRow; r++) {
-                if (mat[r][delCol] != '1') {
-                    return n * n;
+        for (int i = 0; i < len; i++) {
+            int zeroFromRight = 0;
+            for (int j = len - 1; j >= 0; j--) {
+                if (grid[i][j] == 0) {
+                    zeroFromRight++;
+                } else {
+                    break;
                 }
             }
-
-            //horizontal check
-            for (int c = j; c <= delCol; c++) {
-                if (mat[delRow][c] != '1') {
-                    return n * n;
-                }
-            }
-            n++;
-            delRow++;
-            delCol++;
+            arr[i] = zeroFromRight;
         }
 
-        return n * n;
+        return solve(arr);
     }
 
-    private static int solveByTabulation(char[][] mat) {
-        int rows = mat.length;
-        int cols = mat[0].length;
+    private static int solve(int[] arr) {
 
-        int[][] dp = new int[rows][cols];
-        int max = 0;
+        int len = arr.length;
+        int swapCount = 0;
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i < len; i++) {
+            int reqZero = len - (i + 1);
 
-                if (mat[i][j] == '1') {
-                    if (i == 0 || j == 0) {
-                        dp[i][j] = 1;
-                    } else {
-                        dp[i][j] = 1 + Math.min(
-                                dp[i - 1][j],
-                                Math.min(dp[i][j - 1], dp[i - 1][j - 1])
-                        );
+            if (arr[i] < reqZero) {
+
+                int k = -1;
+                for (int j = i + 1; j < len; j++) {
+                    if (arr[j] >= reqZero) {
+                        k = j;
+                        break;
                     }
-                    max = Math.max(max, dp[i][j]);
                 }
+
+                if (k == -1) return -1;
+
+                for (int j = k; j > i; j--) {
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                    swapCount++;
+                }
+
             }
         }
-        return max * max;
+
+        return swapCount;
     }
 
 

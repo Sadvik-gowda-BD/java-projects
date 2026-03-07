@@ -14,7 +14,7 @@ Union-Find (Disjoint Set Union) Data structure (DSU)
 
     why Union-Find/DSU required?
     It mostly used in dynamic graph(Graph which change frequently).
-    Assume there is multiple components, if someone ask 3 and 5 belong to same component? how do you find?
+    Assume there are multiple components, if someone ask 3 and 5 belong to same component? how do you find?
         Bruteforce: do DFS from 3 and if we find 5 on same path, then both belong to same component else different.
         Constant time: we find both belong to same component by constant time by using DSU.
 
