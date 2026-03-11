@@ -33,7 +33,7 @@ public class DisjointSet {
         }
     }
 
-    //It find the parent along with Path compression. Compress path by pointing to 1 parent
+    //It finds the parent along with Path compression. Compress path by pointing to 1 parent
     public int findParent(int node) {
         if (parent.get(node) == node) {
             return node;
