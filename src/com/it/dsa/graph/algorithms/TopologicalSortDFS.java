@@ -9,6 +9,14 @@ It is only applicable for DAG (Directed Acyclic Graph)
 
 Topological Sorting is a linear ordering of vertices in a Directed Acyclic Graph (DAG) such that for
 every directed edge (u → v), vertex u appears before vertex v in the ordering.
+
+We can also detect cyclic using DFS, but we have to maintain state like
+0 -> not visit
+1 -> visiting
+2 -> visited
+
+mark node as visiting when enter the DFS, and mark as visited at the end of DFS. If we try to visit the visiting
+state node, then cycle detected.
  */
 public class TopologicalSortDFS {
 

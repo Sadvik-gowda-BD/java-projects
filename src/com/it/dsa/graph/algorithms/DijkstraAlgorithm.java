@@ -59,6 +59,10 @@ public class DijkstraAlgorithm {
             }
         };
 
+        /* we can use a queue instead of Priority Queue. But it is inefficient
+        we have to traverse all connected nodes of a current node and find the minimum among them when we use a normal
+        queue which takes time of O(V). But using the priority queue we can optimize it to O(log V).
+         */
         PriorityQueue<iPair> pq = new PriorityQueue<>(comparator);
         distArr[src] = 0;
 

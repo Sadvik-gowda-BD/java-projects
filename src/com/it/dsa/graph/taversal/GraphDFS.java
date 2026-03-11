@@ -53,7 +53,7 @@ public class GraphDFS {
             // Diagonal condition
 //            traverseDFS(mat, visited, i - 1, j - 1, rowLen, colLen);
 //            traverseDFS(mat, visited, i - 1, j + 1, rowLen, colLen);
-//            traverseDFS(mat, visited, i + 1, j + 1, rowLen, colLen);
+//            traverseDFS(mat, visited, i + 1, j - 1, rowLen, colLen);
 //            traverseDFS(mat, visited, i + 1, j + 1, rowLen, colLen);
         }
 
