@@ -1,0 +1,30 @@
+
+
+The Factory Design Pattern is a Creational Design Pattern used to create objects without exposing the object creation
+logic to the client. Instead of using new directly everywhere, you delegate object creation to a factory class.
+
+
+1. Why we need Factory Design Pattern
+    Normally we create objects like this: Car car = new BMW();
+    Problem:
+        Client code depends on concrete classes.
+        If you change the implementation, you must change code everywhere.
+        Violates Open/Closed Principle.
+    Factory pattern solves this by:
+        Centralizing object creation
+        Reducing coupling
+        Making code easier to extend
+
+2. Loose Coupling
+    Client does not know which class is created.
+    Client -> Factory -> Concrete Class
+
+2. Easy to Extend
+    Add new class: WhatsappNotification
+    Only modify factory, not client code.
+
+3. Centralized Object Creation
+    All creation logic in one place.
+
+Use Factory when:
+    1️⃣ Object creation is complex like Database connection, Payment gateway, Notification service

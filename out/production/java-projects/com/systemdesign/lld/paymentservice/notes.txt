@@ -1,0 +1,20 @@
+
+Client System
+      │
+      ▼
+PaymentController (API layer)
+      │
+      ▼
+PaymentService (Orchestration)
+      │
+      ▼
+PaymentProcessorFactory
+      │
+      ▼
+PaymentProcessor (Strategy)
+      │
+      ▼
+PaymentGateway (Adapter)
+      │
+      ▼
+External Provider

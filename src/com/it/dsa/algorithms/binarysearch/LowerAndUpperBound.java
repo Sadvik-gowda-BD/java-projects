@@ -54,7 +54,7 @@ public class LowerAndUpperBound {
             if (arr[mid] < target) {
                 low = mid + 1; //this cannot be an answer
             } else {
-                high = mid; //May be this can be my answer
+                high = mid; //Maybe this can be my answer
             }
         }
 
