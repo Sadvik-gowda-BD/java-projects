@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//Yes, Minimum Spanning Tree (MST) is defined only for undirected graphs.
+//Minimum Spanning Tree (MST) works even if the graph contains cycles. But the resulting MST itself will never
+// contain a cycle.
 public class KruskalsAlgorithmMinSpanning {
 
     public static void main(String[] args) {

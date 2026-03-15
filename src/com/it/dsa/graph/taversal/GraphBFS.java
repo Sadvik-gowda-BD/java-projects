@@ -26,6 +26,9 @@ public class GraphBFS {
         int startNode = 1;
         q.add(startNode);
         visited[1] = true;
+
+        //BFS / DFS → mark visited when pushing
+        //Prim → mark visited when polling
         while (!q.isEmpty()) {
             int node = q.poll();
             System.out.print(node + ", ");

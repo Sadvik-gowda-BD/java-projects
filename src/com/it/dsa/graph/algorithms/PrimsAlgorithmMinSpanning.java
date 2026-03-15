@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 /*
-
+Yes, Minimum Spanning Tree (MST) is defined only for undirected graphs.
 It uses Greedy approach
 
 Prim's algo is faster than  Kruskal's algo
