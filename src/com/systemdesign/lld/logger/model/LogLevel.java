@@ -8,7 +8,7 @@ public enum LogLevel {
     WARN(4),
     ERROR(5);
 
-    private int priority;
+    private final int priority;
 
     LogLevel(int priority) {
         this.priority = priority;

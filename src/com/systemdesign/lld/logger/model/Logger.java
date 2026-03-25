@@ -38,8 +38,7 @@ public class Logger {
             return;
         }
 
-        LogMessage logMessage =
-                new LogMessage(logLevel, message, name);
+        LogMessage logMessage = new LogMessage(logLevel, message, name);
 
         for (Appender appender : appenders) {
             appender.append(logMessage);
